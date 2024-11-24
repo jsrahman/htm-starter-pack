@@ -1,50 +1,50 @@
 @mixin setSpace($values, $property) {
-    #{$property}: map-get($values, xl);
+  #{$property}: map-get($values, xl);
 
-    @include md-screen {
-        #{$property}: map-get($values, md);
-    }
+  @include md-screen {
+    #{$property}: map-get($values, md);
+  }
 
-    @include xsm-screen {
-        #{$property}: map-get($values, xsm);
-    }
+  @include xsm-screen {
+    #{$property}: map-get($values, xsm);
+  }
 }
 
 @mixin createSpace($property, $section-spaces) {
-    $prefix: '';
+  $prefix: '';
 
-    @if($property==padding) {
-        $prefix: p;
+  @if($property==padding) {
+    $prefix: p;
+  }
+
+  @if($property==margin) {
+    $prefix: m;
+  }
+
+  @each $size, $values in $section-spaces {
+    .#{$prefix}y-#{$size} {
+      @include setSpace($values, #{$property}-block);
     }
 
-    @if($property==margin) {
-        $prefix: m;
+    .#{$prefix}t-#{$size} {
+      @include setSpace($values, #{$property}-top);
     }
 
-    @each $size, $values in $section-spaces {
-        .#{$prefix}y-#{$size} {
-            @include setSpace($values, #{$property}-block);
-        }
-
-        .#{$prefix}t-#{$size} {
-            @include setSpace($values, #{$property}-top);
-        }
-
-        .#{$prefix}b-#{$size} {
-            @include setSpace($values, #{$property}-bottom);
-        }
+    .#{$prefix}b-#{$size} {
+      @include setSpace($values, #{$property}-bottom);
     }
+  }
 }
 
 
 // Global Section Spacing
 $section: (
-    120: (xl: 120px,
-        md: 80px,
-        xsm: 60px),
-    60: (xl: 60px,
-        md: 40px,
-        xsm: 30px)
+  120: (xl: 120px,
+    md: 80px,
+    xsm: 60px),
+  60: (xl: 60px,
+    md: 40px,
+    xsm: 30px)
 );
 
 // Generate padding and margin classes separately

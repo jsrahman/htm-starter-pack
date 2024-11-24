@@ -4,38 +4,46 @@
   border-bottom: 1px solid hsl(var(--white) / 0.2);
   padding: 10px 0px;
   position: relative;
+
   .social-list.style-two .social-list__link flex-center {
     width: 30px;
     height: 30px;
     @include fs-12;
   }
 }
+
 .top-header-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+
   @include md-screen {
     justify-content: center;
   }
 }
+
 .contact-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+
   &__item {
     padding-right: 20px;
     margin-right: 20px;
     position: relative;
+
     &:last-child {
       padding-right: 0;
       margin-right: 0;
+
       &::before {
         display: none;
       }
     }
+
     &::before {
       position: absolute;
       content: '';
@@ -46,6 +54,7 @@
       transform: translateY(-50%);
       background-color: hsl(var(--white) / 0.4);
     }
+
     &-icon {
       @include fs-12;
       width: 30px;
@@ -59,29 +68,36 @@
       display: inline-block;
     }
   }
+
   &__link {
     color: hsl(var(--white));
     font-weight: 400;
     font-family: var(--body-font);
+
     &:hover &-icon {
       color: hsl(var(--white));
     }
   }
 }
+
 /* Login Registration */
 .login-registration-list {
   margin: 0 -10px;
   padding-right: 20px;
+
   @include md-screen {
     padding-right: 0;
   }
+
   &__item {
     color: hsl(var(--white));
     padding: 0 10px;
     position: relative;
+
     &:last-child::before {
       display: none;
     }
+
     &::before {
       position: absolute;
       content: '';
@@ -93,23 +109,29 @@
       background-color: hsl(var(--white) / 0.5);
     }
   }
+
   &__icon {
     color: hsl(var(--base));
     margin-right: 10px;
     @include fs-16;
   }
+
   &__link {
     color: hsl(var(--white));
     font-weight: 400;
     font-family: var(--body-font);
+
     @include msm-screen {
       @include fs-15;
     }
+
     &:hover {
       color: hsl(var(--base));
+
       .login-registration-list__icon {
         color: hsl(var(--white));
       }
+
       @include md-screen {
         color: hsl(var(--base));
       }
@@ -122,6 +144,7 @@
   display: flex;
   align-items: center;
   position: relative;
+
   .select {
     color: hsl(var(--white));
     background-color: transparent;
@@ -130,9 +153,11 @@
     @include fs-15;
     font-weight: 400;
     border-radius: 5px;
+
     option {
       background-color: hsl(var(--black));
     }
   }
 }
+
 /* ================ Top Header End Here ================ */

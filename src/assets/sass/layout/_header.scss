@@ -2,10 +2,12 @@
 .navbar-brand {
   padding-top: 0;
   padding-bottom: 0;
+
   &.logo {
     img {
       max-width: 200px;
       max-height: 60px;
+
       @include md-screen {
         max-width: 150px;
       }
@@ -17,6 +19,7 @@
   position: relative;
   z-index: 5;
   background-color: hsl(var(--black));
+
   @include md-screen {
     top: 0px;
     background-color: hsl(var(--black));
@@ -27,14 +30,17 @@
     z-index: 999;
     max-height: 101vh;
     overflow-y: auto;
+
     &::-webkit-scrollbar {
       width: 5px;
       height: 5px;
     }
+
     &::-webkit-scrollbar-thumb {
       border-radius: 0px;
     }
   }
+
   &.fixed-header {
     background-color: hsl(var(--black));
     position: sticky;
@@ -50,6 +56,7 @@
     opacity: 0;
     transform: translateY(-150%);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -59,20 +66,25 @@
 .navbar {
   padding: 0 !important;
 }
+
 /* ========================= Desktop Device Start ========================= */
 @media (min-width: 992px) {
   .nav-menu {
     padding-top: 0;
     padding-bottom: 0;
+
     .nav-item {
       position: relative;
       padding-right: 30px;
+
       &:last-child {
         padding-right: 0;
       }
+
       &.active {
         .nav-link {
           color: hsl(var(--base)) !important;
+
           &::before {
             width: 100%;
           }
@@ -80,23 +92,28 @@
 
         .active {
           background-color: hsl(var(--base-l-300)) !important;
+
           &::before {
             width: 100%;
           }
         }
       }
+
       &:hover {
         .nav-link {
           color: hsl(var(--base)) !important;
+
           &::before {
             width: 100%;
           }
+
           .nav-item__icon {
             transform: rotate(180deg);
             transition: 0.2s;
           }
         }
       }
+
       .nav-link {
         font-weight: 500;
         @include fs-16;
@@ -104,11 +121,13 @@
         padding: 33px 0;
         position: relative;
         cursor: pointer;
+
         /* ======================== Style two ================ */
         &:hover::before {
           left: 0;
           transition: 0.3s;
         }
+
         &::before {
           position: absolute;
           content: '';
@@ -120,10 +139,12 @@
           // transform: translateX(-50%);
           transition: 0.3s;
         }
+
         .nav-item__icon {
           transition: 0.3s;
           @include fs-13;
           margin-left: 2px;
+
           @include md-screen {
             margin-right: 6px;
           }
@@ -131,6 +152,7 @@
       }
     }
   }
+
   .dropdown-menu {
     display: block;
     visibility: hidden;
@@ -145,17 +167,21 @@
     overflow: hidden;
     border-radius: 0;
     min-width: 190px;
+
     &__list {
       border-bottom: 1px solid hsl(var(--black) / 0.08);
+
       &:last-child {
         border-bottom: 3px solid hsl(var(--base));
       }
     }
+
     &__link {
       padding: 7px 20px;
       font-weight: 500;
       @include fs-16;
       transition: 0.3s;
+
       &:focus,
       &:hover {
         color: hsl(var(--white));
@@ -163,6 +189,7 @@
       }
     }
   }
+
   .nav-menu {
     .nav-item {
       &:hover {
@@ -176,6 +203,7 @@
     }
   }
 }
+
 /* ========================== Desktop Device End ========================= */
 
 /* ============================== Small Device ======================= */
@@ -183,29 +211,36 @@
   main {
     padding-top: 40px;
   }
+
   .body-overlay.show {
     visibility: visible;
     opacity: 1;
   }
+
   .nav-menu {
     margin-top: 20px;
+
     .nav-item {
       text-align: left;
       display: block;
       position: relative;
       margin: 0;
+
       &:hover .nav-link .nav-item__icon {
         transform: rotate(0deg) !important;
       }
     }
   }
+
   .nav-item {
     &:first-child {
       border-bottom: none;
     }
-    &:last-child > a {
+
+    &:last-child>a {
       border-bottom: 0;
     }
+
     .nav-link {
       margin-bottom: 8px;
       padding: 10px 10px 10px 0 !important;
@@ -215,12 +250,15 @@
       margin: 0 !important;
       border-bottom: 1px solid hsl(var(--white) / 0.2);
       color: hsl(var(--white));
+
       &::before {
         display: none;
       }
+
       &.show {
         &[aria-expanded='true'] {
           color: hsl(var(--base)) !important;
+
           i {
             transform: rotate(180deg);
           }
@@ -228,6 +266,7 @@
       }
     }
   }
+
   .dropdown-menu {
     box-shadow: none;
     border-radius: 2px;
@@ -237,10 +276,12 @@
     border: 0;
     background-color: inherit;
     overflow: hidden;
+
     li {
       &:nth-last-child(1) {
         border-bottom: none;
       }
+
       .dropdown-item {
         padding: 10px 0px;
         font-weight: 500;
@@ -249,6 +290,7 @@
         border-bottom: 1px solid hsl(var(--white) / 0.2);
         margin-left: 20px;
         color: hsl(var(--white));
+
         &:hover,
         &:focus {
           background-color: transparent;
@@ -257,6 +299,7 @@
     }
   }
 }
+
 .navbar-toggler {
   &.header-button {
     border-color: transparent;
@@ -272,6 +315,7 @@
     &:focus {
       box-shadow: none !important;
     }
+
     &[aria-expanded='true'] i::before {
       content: '\f00d';
     }
@@ -281,9 +325,11 @@
 .language-box {
   .select {
     color: hsl(var(--white) / 0.6) !important;
+
     &:focus {
       color: hsl(var(--white)) !important;
     }
   }
 }
+
 /* ================================= Header Css End =========================== */

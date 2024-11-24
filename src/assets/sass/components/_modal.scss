@@ -3,6 +3,7 @@
   .modal-header {
     border-bottom: 1px solid hsl(var(--black) / 0.12);
     padding: 15px;
+
     &.close {
       width: 35px;
       height: 35px;
@@ -11,14 +12,17 @@
       line-height: 1;
       border-radius: 4px;
       transition: 0.2s linear;
+
       &:hover {
         background-color: hsl(var(--danger-l-100));
       }
+
       :focus {
         box-shadow: none;
       }
     }
   }
+
   .modal-content {
     border-radius: 10px !important;
   }
@@ -26,6 +30,7 @@
   .modal-body {
     padding: 15px;
   }
+
   .modal-icon i {
     font-size: rem(32px);
     color: hsl(var(--base));
@@ -37,6 +42,7 @@
     align-items: center;
     border-radius: 50%;
   }
+
   .modal-footer {
     display: flex;
     flex-wrap: wrap;
@@ -48,4 +54,5 @@
     justify-content: flex-end;
   }
 }
+
 /* ================================= Modal Css End =========================== */

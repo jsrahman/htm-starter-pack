@@ -2658,7 +2658,8 @@ input[type=number] {
     left: calc(50vw - 75px);
 }
 
-.loader-p:before, .loader-p:after {
+.loader-p:before,
+.loader-p:after {
     content: "";
     border: 1em solid hsl(var(--base));
     border-radius: 50%;
@@ -3542,4 +3543,70 @@ input[type=number] {
 }
 
 /* ====================== Breadcrumb Css End ==================== */
+/* =========================== Banner Section Start Here ========================= */
+.banner-section {
+    position: relative;
+    z-index: 1;
+    padding: 180px 0 180px;
+}
+
+@media screen and (max-width: 1199px) {
+    .banner-section {
+        padding: 230px 0 140px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .banner-section {
+        padding: 160px 0 100px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .banner-section {
+        padding: 115px 0 60px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .banner-section.bg-img {
+        background-position: center right;
+        -o-object-fit: contain;
+        object-fit: contain;
+    }
+}
+
+.banner-section::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: -webkit-gradient(linear, left top, right top, from(#01001e), color-stop(60.71%, #07065c73));
+    background: linear-gradient(to right, #01001e, #07065c73 60.71%);
+    z-index: -1;
+}
+
+@media screen and (max-width: 991px) {
+    .banner-section::before {
+        background: -webkit-gradient(linear, left top, right top, from(rgba(3, 2, 57, 0.8)), color-stop(60.71%, rgba(3, 2, 57, 0.8)));
+        background: linear-gradient(to right, rgba(3, 2, 57, 0.8), rgba(3, 2, 57, 0.8) 60.71%);
+    }
+}
+
+.banner-content__title {
+    color: hsl(var(--white));
+}
+
+.banner-content__desc {
+    max-width: 600px;
+    color: hsl(var(--white)/0.8);
+}
+
+.banner-content__button {
+    margin-top: 30px;
+}
+
+/* =========================== Banner Section End Here ========================= */
 /*# sourceMappingURL=main.css.map */

@@ -1,47 +1,59 @@
 /* ================================= Dashboard Css Start =========================== */
 .dashboard {
   position: relative;
+
   &__right {
     width: 100%;
     margin-left: 300px;
     background-color: #f5f6fa;
+
     @include md-screen {
       width: 100%;
       margin-left: 0;
     }
   }
+
   // ======================= Dashboard Header Start=======================
   .dropdown {
     display: inline-block !important;
-    @include sm-screen {
-    }
+
+    @include sm-screen {}
   }
+
   .dashboard-header {
     padding: 0 56px;
     background-color: hsl(var(--white));
     border-bottom: 1px solid hsl(var(--base-two) / 0.15);
+
     @include xxl-screen {
       padding: 0 40px;
     }
+
     @include xl-screen {
       padding: 0 32px;
     }
+
     @include lg-screen {
       padding: 0 24px;
     }
+
     @include sm-screen {
       padding: 0 16px;
     }
+
     &__inner {
       padding: 15px 0;
       gap: 10px;
+
       @include msm-screen {
         display: block;
       }
     }
+
     &__right {
       gap: 15px;
     }
+
     .bd-btn {
       padding: 10px 25px;
       background-color: hsl(var(--base) / 0.1);
@@ -49,39 +61,49 @@
       border-radius: 5px;
       font-weight: 600;
       @include fs-16;
+
       &:hover {
         background-color: hsl(var(--base) / 0.2);
       }
+
       &:active {
         position: relative;
         top: 2px;
       }
+
       .icon {
         margin-right: 5px;
       }
+
       &.support {
         background-color: hsl(var(--primary) / 0.1);
         color: hsl(var(--primary));
+
         &:hover {
           background-color: hsl(var(--primary) / 0.2);
         }
       }
+
       &.logout {
         background-color: hsl(var(--danger) / 0.1);
         color: hsl(var(--danger));
+
         &:hover {
           background-color: hsl(var(--danger) / 0.2);
         }
       }
     }
   }
+
   /* User Info Css Start */
   .user-info {
     position: relative;
     text-align: center;
+
     &__button {
       position: relative;
       padding-right: 20px;
+
       &::before {
         position: absolute;
         content: "\f107";
@@ -95,6 +117,7 @@
         pointer-events: none;
       }
     }
+
     .user-info-dropdown {
       border-radius: 4px;
       overflow: hidden;
@@ -111,15 +134,18 @@
       transform: scale(0.95);
       visibility: hidden;
       opacity: 0;
+
       &.show {
         visibility: visible;
         opacity: 1;
         transform: scale(1);
       }
+
       @include md-screen {
         transform: unset !important;
         top: 43px !important;
       }
+
       &__item {
         &:last-child {
           .user-info-dropdown__link {
@@ -127,6 +153,7 @@
           }
         }
       }
+
       &__link {
         padding: 8px 16px !important;
         color: #5d7387 !important;
@@ -136,30 +163,36 @@
         text-align: left;
         @include fs-15;
         border-radius: 5px;
+
         &.active {
           background-color: hsl(var(--base));
         }
+
         &:hover {
           background-color: hsl(var(--base) / 0.08);
           color: hsl(var(--base)) !important;
         }
+
         .icon {
           margin-right: 8px;
         }
       }
     }
+
     &__thumb {
       width: 40px;
       height: 40px;
       overflow: hidden;
       border-radius: 5px;
     }
+
     &__name {
       color: hsl(var(--white));
       margin-left: 10px;
       @include fs-15;
     }
   }
+
   /* User Info Css End */
 
   // ======================= Dashboard Header End =======================
@@ -169,18 +202,23 @@
     position: relative;
     padding: 56px;
     min-height: 100vh;
+
     @include xxl-screen {
       padding: 56px 40px;
     }
+
     @include xl-screen {
       padding: 56px 32px;
     }
+
     @include lg-screen {
       padding: 40px 24px;
     }
+
     @include sm-screen {
       padding: 32px 16px;
     }
+
     &__bar {
       &-icon {
         color: hsl(var(--body-color));
@@ -190,6 +228,7 @@
       }
     }
   }
+
   // Dashboard Card
   .dashboard-widget {
     padding: 24px;
@@ -200,16 +239,20 @@
     background-color: hsl(var(--white));
     box-shadow: 0px 0px 20px hsl(var(--black) / 0.1);
     transition: 0.25s ease-in-out;
+
     &:hover {
       transform: translateY(-6px) scale(1.01);
       box-shadow: 0px 0px 20px hsl(var(--black) / 0.1);
     }
+
     @include xl-screen {
       padding: 16px;
     }
+
     @include sm-screen {
       padding: 16px;
     }
+
     &__icon {
       width: 50px;
       height: 50px;
@@ -217,36 +260,44 @@
       color: hsl(var(--base));
       border-radius: 5px;
       font-size: 1.5rem;
+
       img {
         width: 32px;
       }
+
       @include msm-screen {
         width: 40px;
         height: 40px;
         @include fs-16;
       }
     }
+
     &__content {
       width: calc(100% - 50px);
       padding-left: 16px;
+
       @include msm-screen {
         width: calc(100% - 40px);
         padding-left: 10px;
       }
     }
+
     &__number {
       margin-bottom: 0px;
     }
+
     &__text {
       color: hsl(var(--text-color) / 0.7);
       @include fs-14;
       margin-bottom: 5px;
       font-weight: 600;
+
       @include msm-screen {
         @include fs-13;
       }
     }
   }
+
   .dashboard-widget-wrapper div[class*="col"] {
     &:nth-of-type(7n + 1) {
       .dashboard-widget {
@@ -256,6 +307,7 @@
         }
       }
     }
+
     &:nth-of-type(7n + 2) {
       .dashboard-widget {
         &__icon {
@@ -263,6 +315,7 @@
         }
       }
     }
+
     &:nth-of-type(7n + 3) {
       .dashboard-widget {
         &__icon {
@@ -271,6 +324,7 @@
         }
       }
     }
+
     &:nth-of-type(7n + 4) {
       .dashboard-widget {
         &__icon {
@@ -279,6 +333,7 @@
         }
       }
     }
+
     &:nth-of-type(7n + 5) {
       .dashboard-widget {
         &__icon {
@@ -287,6 +342,7 @@
         }
       }
     }
+
     &:nth-of-type(7n + 6) {
       .dashboard-widget {
         &__icon {
@@ -295,6 +351,7 @@
         }
       }
     }
+
     &:nth-of-type(7n + 7) {
       .dashboard-widget {
         &__icon {
@@ -304,6 +361,7 @@
       }
     }
   }
+
   //  }
   // ========== Dashboard Body End ==============
   /* ================================= Dashboard Css End =========================== */
