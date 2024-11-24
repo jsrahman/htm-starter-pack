@@ -229,7 +229,7 @@
 
 /* ============================= Display Flex Css End ============================= */
 /* ============================= Positioning Css Class Start ===================== */
-.pa-extend, .custom--alert__link::before {
+.pa-extend, .alert__link::before {
     position: absolute;
     content: "";
 }
@@ -874,7 +874,7 @@ button:focus {
     margin-left: 0;
 }
 
-/* ====================== Section Heading En d==================== */
+/* ====================== Section Heading End ==================== */
 /* ================================= Background Color Css Start =========================== */
 .bg--base {
     background-color: hsl(var(--base)) !important;
@@ -935,242 +935,197 @@ button:focus {
 }
 
 /* ================================= Color Css End =========================== */
-/* ================================= margin Css Start =========================== */
-.my-120 {
-    margin-top: 60px;
-    margin-bottom: 60px;
-}
-
-@media (min-width: 576px) {
-    .my-120 {
-        margin-top: 80px;
-        margin-bottom: 80px;
-    }
-}
-
-@media (min-width: 992px) {
-    .my-120 {
-        margin-top: 120px;
-        margin-bottom: 120px;
-    }
-}
-
-.mt-120 {
-    margin-top: 60px;
-}
-
-@media (min-width: 576px) {
-    .mt-120 {
-        margin-top: 80px;
-    }
-}
-
-@media (min-width: 992px) {
-    .mt-120 {
-        margin-top: 120px;
-    }
-}
-
-.mb-120 {
-    margin-bottom: 60px;
-}
-
-@media (min-width: 576px) {
-    .mb-120 {
-        margin-bottom: 80px;
-    }
-}
-
-@media (min-width: 992px) {
-    .mb-120 {
-        margin-bottom: 120px;
-    }
-}
-
-.my-60 {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-@media (min-width: 576px) {
-    .my-60 {
-        margin-top: 40px;
-        margin-bottom: 40px;
-    }
-}
-
-@media (min-width: 992px) {
-    .my-60 {
-        margin-top: 60px;
-        margin-bottom: 60px;
-    }
-}
-
-.mt-60 {
-    margin-top: 30px;
-}
-
-@media (min-width: 576px) {
-    .mt-60 {
-        margin-top: 40px;
-    }
-}
-
-@media (min-width: 992px) {
-    .mt-60 {
-        margin-top: 60px;
-    }
-}
-
-.mb-60 {
-    margin-bottom: 30px;
-}
-
-@media (min-width: 576px) {
-    .mb-60 {
-        margin-bottom: 40px;
-    }
-}
-
-@media (min-width: 992px) {
-    .mb-60 {
-        margin-bottom: 60px;
-    }
-}
-/* ================================= margin Css End =========================== */
-/* ================================= padding Css Start =========================== */
 .py-120 {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-block: 120px;
 }
 
-@media (min-width: 576px) {
+@media screen and (max-width: 991px) {
     .py-120 {
-        padding-top: 80px;
-        padding-bottom: 80px;
+        padding-block: 80px;
     }
 }
 
-@media (min-width: 992px) {
+@media screen and (max-width: 424px) {
     .py-120 {
-        padding-top: 120px;
-        padding-bottom: 120px;
+        padding-block: 60px;
     }
 }
 
 .pt-120 {
-    padding-top: 60px;
+    padding-top: 120px;
 }
 
-@media (min-width: 576px) {
+@media screen and (max-width: 991px) {
     .pt-120 {
         padding-top: 80px;
     }
 }
 
-@media (min-width: 992px) {
+@media screen and (max-width: 424px) {
     .pt-120 {
-        padding-top: 120px;
+        padding-top: 60px;
     }
 }
 
 .pb-120 {
-    padding-bottom: 60px;
+    padding-bottom: 120px;
 }
 
-@media (min-width: 576px) {
+@media screen and (max-width: 991px) {
     .pb-120 {
         padding-bottom: 80px;
     }
 }
 
-@media (min-width: 992px) {
+@media screen and (max-width: 424px) {
     .pb-120 {
-        padding-bottom: 120px;
+        padding-bottom: 60px;
     }
 }
 
 .py-60 {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-block: 60px;
 }
 
-@media (min-width: 576px) {
+@media screen and (max-width: 991px) {
     .py-60 {
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-block: 40px;
     }
 }
 
-@media (min-width: 992px) {
+@media screen and (max-width: 424px) {
     .py-60 {
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-block: 30px;
     }
 }
 
 .pt-60 {
-    padding-top: 30px;
+    padding-top: 60px;
 }
 
-@media (min-width: 576px) {
+@media screen and (max-width: 991px) {
     .pt-60 {
         padding-top: 40px;
     }
 }
 
-@media (min-width: 992px) {
+@media screen and (max-width: 424px) {
     .pt-60 {
-        padding-top: 60px;
+        padding-top: 30px;
     }
 }
 
 .pb-60 {
-    padding-bottom: 30px;
+    padding-bottom: 60px;
 }
 
-@media (min-width: 576px) {
+@media screen and (max-width: 991px) {
     .pb-60 {
         padding-bottom: 40px;
     }
 }
 
-@media (min-width: 992px) {
+@media screen and (max-width: 424px) {
     .pb-60 {
-        padding-bottom: 60px;
+        padding-bottom: 30px;
     }
 }
-/* ================================= padding Css End =========================== */
-/* ================================= Border Color Css Start =========================== */
-.border--base {
-    border-color: hsl(var(--base)) !important;
+
+.my-120 {
+    margin-block: 120px;
 }
 
-.border--primary {
-    border-color: hsl(var(--primary)) !important;
+@media screen and (max-width: 991px) {
+    .my-120 {
+        margin-block: 80px;
+    }
 }
 
-.border--secondary {
-    border-color: hsl(var(--secondary)) !important;
+@media screen and (max-width: 424px) {
+    .my-120 {
+        margin-block: 60px;
+    }
 }
 
-.border--success {
-    border-color: hsl(var(--success)) !important;
+.mt-120 {
+    margin-top: 120px;
 }
 
-.border--danger {
-    border-color: hsl(var(--danger)) !important;
+@media screen and (max-width: 991px) {
+    .mt-120 {
+        margin-top: 80px;
+    }
 }
 
-.border--warning {
-    border-color: hsl(var(--warning)) !important;
+@media screen and (max-width: 424px) {
+    .mt-120 {
+        margin-top: 60px;
+    }
 }
 
-.border--info {
-    border-color: hsl(var(--info)) !important;
+.mb-120 {
+    margin-bottom: 120px;
 }
 
-/* ================================= Border Color Css End =========================== */
+@media screen and (max-width: 991px) {
+    .mb-120 {
+        margin-bottom: 80px;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .mb-120 {
+        margin-bottom: 60px;
+    }
+}
+
+.my-60 {
+    margin-block: 60px;
+}
+
+@media screen and (max-width: 991px) {
+    .my-60 {
+        margin-block: 40px;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .my-60 {
+        margin-block: 30px;
+    }
+}
+
+.mt-60 {
+    margin-top: 60px;
+}
+
+@media screen and (max-width: 991px) {
+    .mt-60 {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .mt-60 {
+        margin-top: 30px;
+    }
+}
+
+.mb-60 {
+    margin-bottom: 60px;
+}
+
+@media screen and (max-width: 991px) {
+    .mb-60 {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .mb-60 {
+        margin-bottom: 30px;
+    }
+}
 /* =========================== Accordion Css start ============================= */
 .custom--accordion .accordion-item {
     border: 1px solid hsl(var(--black)/0.09);
@@ -2541,7 +2496,7 @@ input[type=number] {
 
 /* ================================= Badge Css End =========================== */
 /* ====================================== Alert Css Start =============================== */
-.custom--alert {
+.alert {
     margin-bottom: 0;
     background-color: hsl(var(--white)) !important;
     font-weight: 400;
@@ -2550,42 +2505,42 @@ input[type=number] {
 }
 
 @media screen and (max-width: 991px) {
-    .custom--alert {
+    .alert {
         padding: 16px;
     }
 }
 
 @media screen and (max-width: 575px) {
-    .custom--alert {
+    .alert {
         padding: 12px;
     }
 }
 
-.custom--alert__icon {
+.alert__icon {
     font-size: 1.5rem;
     line-height: 1;
 }
 
-.custom--alert__content {
+.alert__content {
     width: calc(100% - 24px);
     padding-left: 32px;
 }
 
 @media screen and (max-width: 991px) {
-    .custom--alert__content {
+    .alert__content {
         padding-left: 16px;
     }
 }
 
 @media screen and (max-width: 575px) {
-    .custom--alert__content {
+    .alert__content {
         padding-left: 0;
         width: 100%;
         margin-top: 6px;
     }
 }
 
-.custom--alert__title {
+.alert__title {
     font-size: 1rem;
     color: hsl(var(--base-two)/0.8);
     font-weight: 600;
@@ -2593,29 +2548,29 @@ input[type=number] {
     margin-bottom: 6px;
 }
 
-.custom--alert__desc {
+.alert__desc {
     color: hsl(var(--base-two)/0.5);
     display: block;
     line-height: 1.375;
 }
 
 @media screen and (max-width: 424px) {
-    .custom--alert__desc {
+    .alert__desc {
         font-size: 0.8125rem;
     }
 }
 
-.custom--alert__link {
+.alert__link {
     position: relative;
 }
 
-.custom--alert__link:hover::before {
+.alert__link:hover::before {
     visibility: visible;
     opacity: 1;
     bottom: 0;
 }
 
-.custom--alert__link::before {
+.alert__link::before {
     left: 0;
     bottom: -5px;
     width: 100%;
@@ -2627,59 +2582,59 @@ input[type=number] {
     transition: 0.2s ease-in-out;
 }
 
-.custom--alert--base {
+.alert--base {
     border-color: hsl(var(--base)/0.6);
 }
 
-.custom--alert--base .alert__icon {
+.alert--base .alert__icon {
     color: hsl(var(--base));
 }
 
-.custom--alert--primary {
+.alert--primary {
     border-color: hsl(var(--primary)/0.6);
 }
 
-.custom--alert--primary .alert__icon {
+.alert--primary .alert__icon {
     color: hsl(var(--primary));
 }
 
-.custom--alert--success {
+.alert--success {
     border-color: hsl(var(--success)/0.6);
 }
 
-.custom--alert--success .alert__icon {
+.alert--success .alert__icon {
     color: hsl(var(--success));
 }
 
-.custom--alert--info {
+.alert--info {
     border-color: hsl(var(--info)/0.6);
 }
 
-.custom--alert--info .alert__icon {
+.alert--info .alert__icon {
     color: hsl(var(--info));
 }
 
-.custom--alert--danger {
+.alert--danger {
     border-color: hsl(var(--danger)/0.6);
 }
 
-.custom--alert--danger .alert__icon {
+.alert--danger .alert__icon {
     color: hsl(var(--danger));
 }
 
-.custom--alert--warning {
+.alert--warning {
     border-color: hsl(var(--warning)/0.6);
 }
 
-.custom--alert--warning .alert__icon {
+.alert--warning .alert__icon {
     color: hsl(var(--warning));
 }
 
-.custom--alert--secondary {
+.alert--secondary {
     border-color: hsl(var(--secondary)/0.6);
 }
 
-.custom--alert--secondary .alert__icon {
+.alert--secondary .alert__icon {
     color: hsl(var(--secondary));
 }
 

@@ -1,5 +1,3 @@
-
-
 @mixin setSpace($values, $property) {
     #{$property}: map-get($values, xl);
 
@@ -12,7 +10,7 @@
     }
 }
 
-@mixin createSpace($property,$section-spaces) {
+@mixin createSpace($property, $section-spaces) {
     $prefix: '';
 
     @if($property==padding) {
@@ -37,3 +35,18 @@
         }
     }
 }
+
+
+// Global Section Spacing
+$section: (
+    120: (xl: 120px,
+        md: 80px,
+        xsm: 60px),
+    60: (xl: 60px,
+        md: 40px,
+        xsm: 30px)
+);
+
+// Generate padding and margin classes separately
+@include createSpace(padding, $section);
+@include createSpace(margin, $section);

@@ -8,19 +8,25 @@
   @include lg-screen {
     margin-bottom: 60px;
   }
+
   @include md-screen {
     margin-bottom: 30px;
   }
+
   @include sm-screen {
     margin-bottom: 20px;
   }
+
   &__title {
     margin-bottom: 55px;
+
     @include sm-screen {
       margin-bottom: 20px;
     }
   }
+
   position: relative;
+
   &__section-name {
     position: absolute;
     inset-inline: 0;
@@ -34,16 +40,20 @@
     font-weight: 700;
     font-size: clampCal(60px, 140px);
     animation: section-name-blink 5s linear infinite;
+
     @include md-screen {
       top: -55px;
     }
+
     @include sm-screen {
       top: -45px;
     }
+
     @include xsm-screen {
       top: -25px;
     }
   }
+
   &__desc {
     max-width: 670px;
     margin-left: auto;
@@ -51,9 +61,11 @@
     line-height: 1.8;
     font-size: clampCal(16px, 18px);
   }
+
   // Style left
   &.style-left {
     text-align: left;
+
     .section-heading {
       &__title {
         &::before {
@@ -61,28 +73,12 @@
           transform: translateX(0);
         }
       }
+
       &__desc {
         margin-left: 0;
       }
     }
   }
 }
-/* ====================== Section Heading En d==================== */
 
-
-// Global Section Spacing
-$section: (
-    120: (xl: 120px,
-        md: 80px,
-        xsm: 60px),
-    60: (xl: 60px,
-        md: 40px,
-        xsm: 30px)
-);
-
-// Generate padding and margin classes separately
-@include createSpace(padding,$section);
-@include createSpace(margin,$section);
-
-
-
+/* ====================== Section Heading End ==================== */
