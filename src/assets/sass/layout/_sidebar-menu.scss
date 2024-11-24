@@ -1,0 +1,258 @@
+/* ================================= Dashboard Fulid Sidebar Css Start =========================== */
+.dashboard {
+  // Sidebar logo Css Start
+  .sidebar-logo {
+    text-align: center;
+    margin: 24px 0;
+    @include md-screen {
+      margin-top: 32px;
+    }
+    img {
+      max-width: 170px;
+      max-height: 60px;
+    }
+  }
+  // Sidebar logo Css End
+
+  // Sidebar Menu Start
+  .sidebar-menu {
+    height: 100vh;
+    background-color: hsl(var(--white));
+    overflow-y: auto;
+    z-index: 999;
+    transition: 0.2s linear;
+    width: 300px;
+    border-right: 1px solid hsl(var(--base-two) / 0.15);
+    border-radius: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    align-items: start;
+    flex-direction: row;
+    &::-webkit-scrollbar {
+      width: 3px;
+      height: 3px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: hsl(var(--black) / 0.15);
+    }
+    &__inner {
+      padding: 0 24px;
+      width: 100%;
+    }
+    //=========== Sidebar Show hide Css Start =======
+    &.show-sidebar {
+      transform: translateX(0);
+    }
+    @include md-screen {
+      transform: translateX(-100%);
+      z-index: 9992;
+      border-radius: 0;
+    }
+    &__close {
+      position: absolute;
+      top: 8px;
+      right: 16px;
+      color: hsl(var(--body-color));
+      font-size: 1.25rem;
+      transition: 0.2s linear;
+      cursor: pointer;
+      z-index: 9;
+      &:active {
+        top: 14px;
+      }
+      &:hover,
+      &:focus {
+        background-color: hsl(var(--white));
+        border-color: hsl(var(--white));
+        color: hsl(var(--base));
+      }
+    }
+
+    /* Menu Title Css */
+    .menu-title {
+      letter-spacing: 0.9px;
+      padding: 12px 15px;
+      color: #9da9b5;
+      font-weight: 600;
+      @include fs-13;
+    }
+
+    /* Hr Css */
+    hr {
+      opacity: 0.15;
+    }
+    //=========== Sidebar Show hide Css End =======
+    &-list {
+      margin-top: 40px;
+      &__item {
+        margin-bottom: 6px;
+        &:last-child {
+          .sidebar-menu-list__link {
+            border-bottom: 0;
+          }
+        }
+        &.active {
+          > a {
+            background-color: hsl(var(--base) / 0.1);
+            color: hsl(var(--base));
+          }
+        }
+        &.has-dropdown {
+          &.active {
+            > a {
+              color: hsl(var(--base));
+              &:after {
+                transform: rotate(90deg);
+                right: 18px;
+                color: hsl(var(--base));
+              }
+            }
+          }
+          > a {
+            &:after {
+              position: absolute;
+              content: '\f105';
+              font-family: 'Font Awesome 5 Free';
+              font-weight: 900;
+              font-style: normal;
+              display: inline-block;
+              font-style: normal;
+              font-variant: normal;
+              text-rendering: auto;
+              text-align: center;
+              background: 0 0;
+              right: 16px;
+              top: 14px;
+              transition: 0.1s linear;
+              color: hsl(var(--text-color) / 0.6);
+              @include fs-13;
+            }
+          }
+        }
+      }
+      &__link {
+        display: inline-block;
+        text-decoration: none;
+        position: relative;
+        padding: 12px 15px;
+        width: 100%;
+        color: #6b717e;
+        font-weight: 500;
+        @include fs-15;
+        border-radius: 5px;
+        &:hover {
+          background-color: hsl(var(--base) / 0.06);
+        }
+        &.active {
+          color: hsl(var(--base));
+        }
+        .icon {
+          margin-right: 8px;
+          @include fs-15;
+          text-align: center;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+  // Sidebar Menu End
+
+  // Sidebar Submenu Start
+  .sidebar-submenu {
+    display: none;
+    &.open-submenu {
+      display: block;
+    }
+    &-list {
+      padding: 5px 0;
+      &__item {
+        margin-bottom: 6px;
+        &.active {
+          > a {
+            color: hsl(var(--base));
+            background-color: hsl(var(--base) / 0.06);
+          }
+        }
+      }
+      &__link {
+        padding: 12px 15px;
+        display: block;
+        color: hsl(var(--body-color));
+        color: #6b717e;
+        font-weight: 500;
+        @include fs-15;
+        margin-left: 20px;
+        border-radius: 5px;
+        position: relative;
+        padding-left: 25px;
+        &::before {
+          @extend .pa-extend;
+          left: 10px;
+          @extend .top-center-extend;
+          width: 10px;
+          height: 10px;
+          background-color: transparent;
+          border: 1px solid hsl(var(--black) / 0.4);
+          border-radius: 50%;
+        }
+        &:hover {
+          background-color: hsl(var(--base) / 0.04);
+        }
+        .icon {
+          margin-right: 8px;
+          @include fs-15;
+          text-align: center;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+  // Sidebar Submenu End
+}
+/* ============ User Profile Css Start ============ */
+
+/* Sidebar User Info Css */
+.user-profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid hsl(var(--base-two) / 0.15);
+  width: 100%;
+  padding: 20px 24px;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: calc(300px - 1px);
+  background-color: hsl(var(--white));
+  align-self: flex-end;
+}
+.user-profile-info {
+  display: flex;
+  flex-wrap: wrap;
+  &__icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #f3f9fe;
+    @include fs-18;
+    border: 1px solid hsl(var(--black) / 0.1);
+  }
+  &__content {
+    width: calc(100% - 50px);
+    padding-left: 15px;
+  }
+
+  &__name {
+    margin-bottom: 0px;
+  }
+  &__desc {
+    color: hsl(var(--body-color));
+    font-size: 15px;
+  }
+}
+/* ========= User Profile Css End ============== */
+
+/* ================================= Dashboard Fulid Sidebar Css End =========================== */

@@ -1,0 +1,103 @@
+/* Fully Fit image Css */
+.fit-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* ============================= Display Flex Css Start ============================= */
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-align {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.flex-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.flex-between {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+/* ============================= Display Flex Css End ============================= */
+
+/* ============================= Positioning Css Class Start ===================== */
+.pa-extend {
+  position: absolute;
+  content: '';
+}
+.top-center-extend {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.left-center-extend {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.top-left-center-extend {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* ============================= Positioning Css Class End ===================== */
+
+/* ===================== Font Size For responsive devices Start =================== */
+.fs-10 {
+  @include fs-10;
+}
+.fs-11 {
+  @include fs-11;
+}
+.fs-12 {
+  @include fs-12;
+}
+.fs-13 {
+  @include fs-13;
+}
+.fs-14 {
+  @include fs-14;
+}
+.fs-15 {
+  @include fs-15;
+}
+.fs-16 {
+  @include fs-16;
+  @include lg-screen {
+    @include fs-15;
+  }
+}
+.fs-17 {
+  @include fs-17;
+  @include lg-screen {
+    @include fs-16;
+  }
+  @include sm-screen {
+    @include fs-15;
+  }
+}
+.fs-18 {
+  @include fs-18;
+  @include xl-screen {
+    @include fs-17;
+  }
+  @include sm-screen {
+    @include fs-16;
+  }
+}
+.fs-20 {
+  @include fs-20;
+  @include xl-screen {
+    @include fs-18;
+  }
+  @include sm-screen {
+    @include fs-17;
+  }
+}
+/* ===================== Font Size For responsive devices End =================== */

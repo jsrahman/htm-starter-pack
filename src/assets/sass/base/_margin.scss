@@ -1,0 +1,62 @@
+/* ================================= margin Css Start =========================== */
+.my-120 {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  @media (min-width: 576px) {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  @media (min-width: 992px) {
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+}
+.mt-120 {
+    margin-top: 60px;
+    @media (min-width: 576px) {
+    margin-top: 80px;
+  }
+    @media (min-width: 992px) {
+    margin-top: 120px;
+  }
+}
+.mb-120 {
+    margin-bottom: 60px;
+    @media (min-width: 576px) {
+    margin-bottom: 80px;
+  }
+    @media (min-width: 992px) {
+    margin-bottom: 120px;
+  }
+}
+.my-60 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    @media (min-width: 576px) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+    @media (min-width: 992px) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+.mt-60 {
+    margin-top: 30px;
+    @media (min-width: 576px) {
+    margin-top: 40px;
+  }
+    @media (min-width: 992px) {
+    margin-top: 60px;
+  }
+}
+  .mb-60 {
+    margin-bottom: 30px;
+    @media (min-width: 576px) {
+    margin-bottom: 40px;
+  }
+    @media (min-width: 992px) {
+    margin-bottom: 60px;
+  }
+}
+/* ================================= margin Css End =========================== */

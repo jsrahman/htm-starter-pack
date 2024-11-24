@@ -1,0 +1,40 @@
+/* =========================================== Account Css Start =========================*/
+.account-inner{
+    position: relative;
+}
+
+.account-form  {
+    box-shadow: 0 6px 20px hsl(var(--black)/.07);
+    background-color: hsl(var(--white)/.1);
+    padding: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    @include lg-screen {
+        padding: 40px 30px;
+    }
+    @include md-screen {
+        padding: 35px 25px;
+    }
+    @include sm-screen {
+        padding: 30px 20px;
+    }
+    @include xsm-screen {
+        padding: 30px 15px;
+    }
+}
+
+.account-thumb {
+    @media (min-width: 1199px) {     
+        position: absolute;
+        left: 20px;
+        top: 0;
+        bottom: 0;
+        width: 47%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
+/* ============================================ Account Css End ====================================*/

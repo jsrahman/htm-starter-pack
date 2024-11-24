@@ -1,0 +1,78 @@
+/* ================================= Button Css Start =========================== */
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  color: none;
+  background-color: none;
+  border-color: none;
+}
+
+.pill {
+  border-radius: 40px !important;
+}
+
+.btn {
+  color: hsl(var(--white)) !important;
+  font-weight: 500;
+  padding: 17px 29px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  border: 1px solid transparent;
+  font-family: var(--body-font);
+  display: inline-block !important;
+  @include fs-16;
+  line-height: 1;
+  @include sm-screen {
+    padding: 14px 25px;
+    @include fs-14;
+  }
+  @include msm-screen {
+    padding: 12px 20px;
+  }
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    box-shadow: none !important;
+  }
+  &:active {
+    top: 1px;
+  }
+  &--lg {
+    padding: 20px 35px;
+    @include md-screen {
+      padding: 18px 30px;
+    }
+    @include sm-screen {
+      padding: 16px 25px;
+    }
+  }
+  &--sm {
+    padding: 7px 18px;
+    font-weight: 600;
+    font-size: rem(12px);
+    @include sm-screen {
+      padding: 8px 12px;
+    }
+  }
+  &--icon {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    @include fs-15;
+    padding: 0;
+  }
+  // ============= Gradient Button Start =======================
+  @include gradient-btn(--base, --base, --base-two, 90deg);
+  // ============= Gradient Button End =======================
+  // ============= Different Color Button Start ==================
+  // @include btn-style(--base);
+  @include btn-style(--primary);
+  @include btn-style(--secondary);
+  @include btn-style(--danger);
+  @include btn-style(--warning);
+  @include btn-style(--info);
+}
+/* ================================= Button Css End =========================== */

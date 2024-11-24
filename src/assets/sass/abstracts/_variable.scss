@@ -1,0 +1,81 @@
+// /* Font Family*/
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700;900&display=swap');
+
+/* ========================= Css Variables Start ======================== */
+:root {
+  /* Font Family */
+  --heading-font: 'Ubuntu', sans-serif;
+  --body-font: 'Geologica', sans-serif;
+
+  /* ========================= Theme Color Start ============================= */
+
+  /* Base Color */
+  @include colorVariable(--base, #c37aff, 10);
+
+  /* Base Two Color */
+  @include colorVariable(--base-two, #a640fa, 10);
+
+  /* ========================= Theme Color End ============================= */
+
+  /* ========================= Color Variables Start =========================== */
+  // White Color
+  @include colorVariable(--white, #ffffff);
+
+  // Body Color
+  @include colorVariable(--body-color, #cccccc);
+
+  // heading-color
+  @include colorVariable(--heading-color, #e2e2e2);
+
+  // Black Color
+  @include colorVariable(--black, #000);
+
+  //Border Color
+  @include colorVariable(--border-color, #e0e0e0);
+
+  // Section Background
+  @include colorVariable(--section-bg, #f0f8ff);
+
+  --background-color: var(--black);
+
+  /* ================================ Box Shadow Start =============================== */
+  // Header Box shadow
+  --header-box-shadow: 0px -1px 15px 3px hsl(var(--black) / 0.3);
+  // Mobile bottom fix menu box shadow
+  --mobile-box-shadow: 0px -1px 5px 0px hsl(var(--black) / 0.92);
+  // Card box shadow
+  --box-shadow: 0px 2px 15px hsl(var(--black) / 0.05);
+  /* ================================ Box Shadow End =============================== */
+
+  /* ============================== Bootstrap Modifier Start ============================== */
+  /* Primary Color */
+  @include colorVariable(--primary, #0007cc, 5);
+
+  /* Secondary Color */
+  @include colorVariable(--secondary, #6d767e, 5);
+
+  /* Success Color */
+  @include colorVariable(--success, #1bcc00, 5);
+
+  /* Danger Color */
+  @include colorVariable(--danger, #fb4646, 5);
+
+  /* Warning Color */
+  @include colorVariable(--warning, #eb9c00, 5);
+
+  /* Info Color */
+  @include colorVariable(--info, #00bbff, 5);
+
+  /* ============================== Bootstrap Modifier End ============================== */
+
+  /* ============================== Dark Mood Color Modify Start ============================== */
+  [data-theme='dark'] {
+    // Reverse White
+    @include colorVariable(--white, #101213);
+
+    // Reverse Black
+    @include colorVariable(--black, #f8fafc);
+  }
+  /* ============================== Dark Mood Color Modify End ============================== */
+}
+/* ========================= Css Variables End =========================== */

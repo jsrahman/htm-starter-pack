@@ -1,0 +1,111 @@
+/* ====================================== Alert Css Start =============================== */
+.alert {
+  margin-bottom: 0;
+  background-color: hsl(var(--white)) !important;
+  font-weight: 400;
+  padding: 17px 24px;
+  border-radius: 5px;
+  @include md-screen {
+    padding: 16px;
+  }
+  @include msm-screen {
+    padding: 12px;
+  }
+  
+  &__icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  &__content {
+    width: calc(100% - 24px);
+    padding-left: 32px;
+    @include md-screen {
+      padding-left: 16px;
+    }
+    @include msm-screen {
+      padding-left: 0;
+      width: 100%;
+      margin-top: 6px;
+    }
+  }
+  &__title {
+    @include fs-16;
+    color: hsl(var(--base-two) / 0.8);
+    font-weight: 600;
+    font-family: var(--heading-font);
+    margin-bottom: 6px;
+  }
+  &__desc {
+    color: hsl(var(--base-two) / 0.5);
+    display: block;
+    line-height: 1.375;
+    @include xsm-screen {
+      @include fs-13;
+    }
+  }
+  &__link {
+    position: relative;
+    &:hover {
+      &::before {
+        visibility: visible;
+        opacity: 1;
+        bottom: 0;
+      }
+    }
+    &::before {
+      @extend .pa-extend;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 1px;
+      background-color: hsl(var(--base));
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.2s ease-in-out;
+    }
+  }
+
+  &--base {
+    border-color: hsl(var(--base) / 0.6);
+    .alert__icon {
+      color: hsl(var(--base));
+    }
+  }
+  &--primary {
+    border-color: hsl(var(--primary) / 0.6);
+    .alert__icon {
+      color: hsl(var(--primary));
+    }
+  }
+  &--success {
+    border-color: hsl(var(--success) / 0.6);
+    .alert__icon {
+      color: hsl(var(--success));
+    }
+  }
+  &--info {
+    border-color: hsl(var(--info) / 0.6);
+    .alert__icon {
+      color: hsl(var(--info));
+    }
+  }
+  &--danger {
+    border-color: hsl(var(--danger) / 0.6);
+    .alert__icon {
+      color: hsl(var(--danger));
+    }
+  }
+  &--warning {
+    border-color: hsl(var(--warning) / 0.6);
+    .alert__icon {
+      color: hsl(var(--warning));
+    }
+  }
+  &--secondary {
+    border-color: hsl(var(--secondary) / 0.6);
+    .alert__icon {
+      color: hsl(var(--secondary));
+    }
+  }
+}
+/* ====================================== Alert Css End =============================== */

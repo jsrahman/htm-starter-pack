@@ -1,0 +1,325 @@
+/* ================================= Form Css Start =========================== */
+/* Form Label */
+.form--label {
+  margin-bottom: 6px;
+  @include fs-15;
+  color: hsl(var(--black) / 0.6);
+  font-weight: 500;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+/* Form Select */
+.select {
+  color: hsl(var(--black) / 0.6) !important;
+  &:focus {
+    border-color: hsl(var(--base));
+    color: hsl(var(--black)) !important;
+  }
+  option {
+    background-color: hsl(var(--black));
+    color: hsl(var(--white));
+  }
+}
+/* Form Select End */
+
+/* Form Control Start */
+.form--control {
+  border-radius: 5px;
+  font-weight: 400;
+  outline: none;
+  width: 100%;
+  padding: 13px 24px;
+  background-color: transparent;
+  border: 1px solid hsl(var(--black) / 0.2);
+  color: hsl(var(--black));
+  line-height: 1;
+  &::placeholder {
+    color: hsl(var(--black) / 0.6);
+    @include fs-14;
+  }
+  &:focus {
+    border-color: hsl(var(--base));
+  }
+  &:disabled,
+  &[readonly] {
+    background-color: hsl(var(--black) / 0.2);
+    opacity: 1;
+    border: 0;
+  }
+  &[type='password'] {
+    color: hsl(var(--black) / 0.5);
+    &:focus {
+      color: hsl(var(--black));
+    }
+  }
+  &[type='file'] {
+    line-height: 50px;
+    padding: 0;
+    position: relative;
+    &::file-selector-button {
+      border: 1px solid hsl(var(--black) / 0.08);
+      padding: 4px 6px;
+      border-radius: 0.2em;
+      background-color: hsl(var(--base)) !important;
+      transition: 0.2s linear;
+      line-height: 25px;
+      position: relative;
+      margin-left: 15px;
+      color: hsl(var(--body-color)) !important;
+      &:hover {
+        background-color: hsl(var(--base));
+        border: 1px solid hsl(var(--base));
+        color: hsl(var(--black));
+      }
+    }
+  }
+}
+/* Form Control End */
+
+// Message Field Css
+textarea.form--control {
+  height: 130px;
+}
+/* Autofill Css */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  -webkit-text-fill-color: hsl(var(--black)) !important;
+  caret-color: hsl(var(--black));
+}
+/* Autofill Css End */
+
+/* input group */
+.input--group {
+  position: relative;
+}
+/* Show Hide Password */
+input#your-password,
+input#confirm-password {
+  padding-right: 50px;
+}
+.password-show-hide {
+  position: absolute;
+  right: 20px;
+  z-index: 5;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+  color: hsl(var(--black) / 0.4);
+}
+/* --------------- Number Arrow None --------------------- */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type='number'] {
+  appearance: textfield;
+}
+
+/* Custom Checkbox Design */
+.form--check {
+  @extend .flex-wrap;
+  a {
+    display: inline;
+  }
+  .form-check-input {
+    box-shadow: none;
+    background-color: transparent;
+    box-shadow: none !important;
+    border: 0;
+    position: relative;
+    border-radius: 0px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid hsl(var(--black) / 0.2);
+    cursor: pointer;
+    &:checked {
+      background-color: hsl(var(--base)) !important;
+      border-color: hsl(var(--base)) !important;
+      box-shadow: none;
+      &[type='checkbox'] {
+        background-image: none;
+      }
+      &::before {
+        position: absolute;
+        content: '\f00c';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        color: hsl(var(--white));
+        @include fs-11;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  .form-check-label {
+    font-weight: 600;
+    width: calc(100% - 16px);
+    padding-left: 12px;
+    cursor: pointer;
+    @include fs-14;
+  }
+  label {
+    @include xsm-screen {
+      @include fs-15;
+    }
+  }
+  a {
+    @include xsm-screen {
+      @include fs-15;
+    }
+  }
+}
+/* Custom Radio Design */
+.form--radio {
+  @extend .flex-wrap;
+  .form-check-input {
+    box-shadow: none;
+    border: 1px solid hsl(var(--black) / 0.2);
+    position: relative;
+    background-color: transparent;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    &:active {
+      filter: brightness(100%);
+    }
+    &:checked {
+      background-color: transparent;
+      border-color: hsl(var(--base));
+      &[type='radio'] {
+        background-image: none;
+      }
+      &::before {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 7px;
+        height: 7px;
+        background-color: hsl(var(--base));
+        border-radius: 50%;
+        z-index: 999;
+      }
+    }
+  }
+  .form-check-label {
+    font-weight: 600;
+    width: calc(100% - 16px);
+    padding-left: 12px;
+    cursor: pointer;
+    @include fs-14;
+  }
+}
+/*  Custom Switch Design */
+.form--switch {
+  .form-check-input {
+    border-radius: 3px;
+    background-image: none;
+    position: relative;
+    box-shadow: none;
+    border: 0;
+    background-color: hsl(var(--black) / 0.2) !important;
+    padding: 10px !important;
+    margin-left: 0;
+    margin-bottom: 5px;
+    border-radius: 40px;
+    width: 70px;
+    height: 38px;
+    cursor: pointer;
+    &:focus {
+      border-radius: 40px;
+      background-image: none;
+      position: relative;
+      box-shadow: none;
+      border: 0;
+    }
+    &::before {
+      position: absolute;
+      content: '';
+      width: 28px;
+      height: 28px;
+      background-color: hsl(var(--white));
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 2px;
+      left: 5px;
+      border-radius: 50%;
+      transition: 0.2s linear;
+    }
+    &:checked {
+      background-color: hsl(var(--base)) !important;
+      &::before {
+        left: calc(100% - 33px);
+        background-color: hsl(var(--white)) !important;
+      }
+    }
+    &:checked[type='checkbox'] {
+      background-image: none;
+    }
+  }
+  .form-check-label {
+    width: calc(100% - 14px);
+    padding-left: 5px;
+    cursor: pointer;
+  }
+}
+/*  Custom Switch End Design */
+/* ================================= Form Css End =========================== */
+
+/* --======================Custom Input group Start ======================*/
+
+.input--group {
+  border-radius: 5px;
+  border: 1px solid hsl(var(--border-color));
+  .form--control {
+    border-width: 0px !important;
+    padding-right: 5px;
+    box-shadow: unset;
+  }
+
+  .input-group-text + .form--control {
+    padding-right: 20px;
+    padding-left: 10px;
+  }
+  &:focus-within {
+    border: 1px solid hsl(var(--base));
+  }
+  .input-group-text {
+    border-width: 0px;
+    height: calc(100% - 10px);
+    margin: 5px;
+    border-radius: 5px;
+    background-color: hsl(var(--black) / 0.1);
+    color: hsl(var(--body-color));
+  }
+  &-text {
+    margin-left: 5px;
+  }
+  .form--control[readonly] {
+    background: hsl(var(--black) / 0.3) !important;
+  }
+  .form--control[readonly]:focus {
+    border-color: hsl(var(--black) / 0.3);
+  }
+  &:has(.form--control[readonly]) {
+    background: hsl(var(--black) / 0.3) !important;
+  }
+  &:has(.form--control[readonly]):focus-within {
+    border-color: hsl(var(--black) / 0.4) !important;
+  }
+}
+/* --======================Custom Input group End ======================*/

@@ -1,0 +1,39 @@
+
+
+@mixin setSpace($values, $property) {
+    #{$property}: map-get($values, xl);
+
+    @include md-screen {
+        #{$property}: map-get($values, md);
+    }
+
+    @include xsm-screen {
+        #{$property}: map-get($values, xsm);
+    }
+}
+
+@mixin createSpace($property,$section-spaces) {
+    $prefix: '';
+
+    @if($property==padding) {
+        $prefix: p;
+    }
+
+    @if($property==margin) {
+        $prefix: m;
+    }
+
+    @each $size, $values in $section-spaces {
+        .#{$prefix}y-#{$size} {
+            @include setSpace($values, #{$property}-block);
+        }
+
+        .#{$prefix}t-#{$size} {
+            @include setSpace($values, #{$property}-top);
+        }
+
+        .#{$prefix}b-#{$size} {
+            @include setSpace($values, #{$property}-bottom);
+        }
+    }
+}

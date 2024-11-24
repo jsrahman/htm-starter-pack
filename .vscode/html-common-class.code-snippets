@@ -1,0 +1,128 @@
+{
+  "Fit Image": {
+    "prefix": "fit-image",
+    "scope": "html, php",
+    "body": ["fit-image"],
+    "description": "width: 100%;\nheight: 100%;\nobject-fit: cover;"
+  },
+  "Flex Wrap": {
+    "prefix": "flex-wrap",
+    "scope": "html, php",
+    "body": ["flex-wrap"],
+    "description": "display: flex;\nflex-wrap: wrap;"
+  },
+  "Flex Align": {
+    "prefix": "flex-align",
+    "scope": "html, php",
+    "body": ["flex-align"],
+    "description": "display: flex;\nflex-wrap: wrap;\nalign-items: center;"
+  },
+  "Flex Center": {
+    "prefix": "flex-center",
+    "scope": "html, php",
+    "body": ["flex-center"],
+    "description": "display: flex;\nflex-wrap: wrap;\njustify-content: center;\nalign-items: center;"
+  },
+  "Flex Between": {
+    "prefix": "flex-between",
+    "scope": "html, php",
+    "body": ["flex-between"],
+    "description": "display: flex;\nflex-wrap: wrap;\njustify-content: space-between;\nalign-items: center;"
+  },
+  "Position Extend": {
+    "prefix": "pa-extend",
+    "scope": "html, php",
+    "body": ["pa-extend"],
+    "description": "position: absolute;\ncontent: '';"
+  },
+  "Top Center Extend": {
+    "prefix": "top-center-extend",
+    "scope": "html, php",
+    "body": ["top-center-extend"],
+    "description": "top: 50%;\ntransform: translateY(-50%);"
+  },
+  "Left Center Extend": {
+    "prefix": "left-center-extend",
+    "scope": "html, php",
+    "body": ["left-center-extend"],
+    "description": "left: 50%;\ntransform: translateX(-50%);"
+  },
+  "Top Left Center Extend": {
+    "prefix": "top-left-center-extend",
+    "scope": "html, php",
+    "body": ["top-left-center-extend"],
+    "description": "top: 50%;\nleft: 50%;\ntransform: translate(-50%, -50%);"
+  },
+  "Font Size 10": {
+    "prefix": "fs-10",
+    "scope": "html, php",
+    "body": ["fs-10"],
+    "description": "Font size for responsive devices: @include fs-10;"
+  },
+  "Font Size 11": {
+    "prefix": "fs-11",
+    "scope": "html, php",
+    "body": ["fs-11"],
+    "description": "Font size for responsive devices: @include fs-11;"
+  },
+  "Font Size 12": {
+    "prefix": "fs-12",
+    "scope": "html, php",
+    "body": ["fs-12"],
+    "description": "Font size for responsive devices: @include fs-12;"
+  },
+  "Font Size 13": {
+    "prefix": "fs-13",
+    "scope": "html, php",
+    "body": ["fs-13"],
+    "description": "Font size for responsive devices: @include fs-13;"
+  },
+  "Font Size 14": {
+    "prefix": "fs-14",
+    "scope": "html, php",
+    "body": ["fs-14"],
+    "description": "Font size for responsive devices: @include fs-14;"
+  },
+  "Font Size 15": {
+    "prefix": "fs-15",
+    "scope": "html, php",
+    "body": ["fs-15"],
+    "description": "Font size for responsive devices: @include fs-15;"
+  },
+  "Font Size 16": {
+    "prefix": "fs-16",
+    "scope": "html, php",
+    "body": ["fs-16"],
+    "description": "Font size for responsive devices: @include fs-16; @include lg-screen { @include fs-15; }"
+  },
+  "Font Size 17": {
+    "prefix": "fs-17",
+    "scope": "html, php",
+    "body": ["fs-17"],
+    "description": "Font size for responsive devices:  Now Font Size is 17px;"
+  },
+  "Font Size 18": {
+    "prefix": "fs-18",
+    "scope": "html, php",
+    "body": ["fs-18"],
+    "description": "Font size for responsive devices:  Now Font Size is 18px;"
+  },
+  "Font Size 20": {
+    "prefix": "fs-20",
+    "scope": "html, php",
+    "body": ["fs-20"],
+    "description": "Font size for responsive devices:  Now Font Size is 20px;"
+  },
+  "Bg Image": {
+    "prefix": "bg-img",
+    "scope": "html, php",
+    "body": ["bg-img"],
+    "description": "background-size: cover !important;\nbackground-repeat: no-repeat;\nbackground-position: center center;\nwidth: 100%;\nheight: 100%;"
+  },
+  "input--group ": {
+    "prefix": "input--group ",
+    "scope": "html, php",
+    "body": ["bg-img"],
+    "description": "custom input--group"
+  }
+}

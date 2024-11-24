@@ -1,0 +1,40 @@
+/* ================================= Badge Css Start =========================== */
+.custom--badge {
+  font-size: rem(12px);
+  border-radius: 5px;
+  padding: 8px 10px;
+  font-weight: 500;
+  position: relative;
+  text-align: center;
+}
+.badge {
+  &--base {
+    background-color: hsl(var(--base) / 0.15) !important;
+    color: hsl(var(--base)) !important;
+  }
+  &--primary {
+    background-color: hsl(var(--primary) / 0.15) !important;
+    color: hsl(var(--primary)) !important;
+  }
+  &--secondary {
+    background-color: hsl(var(--secondary) / 0.15) !important;
+    color: hsl(var(--secondary)) !important;
+  }
+  &--success {
+    background-color: hsl(var(--success) / 0.15) !important;
+    color: hsl(var(--success)) !important;
+  }
+  &--danger {
+    background-color: hsl(var(--danger) / 0.15) !important;
+    color: hsl(var(--danger)) !important;
+  }
+  &--warning {
+    background-color: hsl(var(--warning) / 0.15) !important;
+    color: hsl(var(--warning)) !important;
+  }
+  &--info {
+    background-color: hsl(var(--info) / 0.15) !important;
+    color: hsl(var(--info)) !important;
+  }
+}
+/* ================================= Badge Css End =========================== */

@@ -1,0 +1,181 @@
+@use 'sass:math';
+
+// Space between child elements in using margin it's top to bottom;
+@mixin space-y($val) {
+  & > :not([hidden]) ~ :not([hidden]) {
+    margin-top: #{convertToRem($val)}rem;
+    margin-bottom: #{convertToRem($val)}rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Space between child elements in using margin it's left to right;
+@mixin space-x($val) {
+  & > :not([hidden]) ~ :not([hidden]) {
+    margin-left: #{convertToRem($val)}rem;
+    margin-right: #{convertToRem($val)}rem;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+// Size function get value to hide and width make center the value;
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+  @if $width== $height {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+// Loop Base colors
+@mixin loopColors($name, $flows, $limits: 9) {
+  $i: 1;
+  $deep: 100;
+  $opacity: 0.1;
+
+  @while $i <= $limits {
+    @if ($flows== 'dark') {
+      #{$name}-d-#{$deep}: var(#{$name}-h) var(#{$name}-s) calc(var(#{$name}-l) - var(#{$name}-l) * $opacity);
+    }
+    @if ($flows== 'light') {
+      #{$name}-l-#{$deep}: var(#{$name}-h) calc(var(#{$name}-s)) calc(var(#{$name}-l) + (100% - var(#{$name}-l)) * $opacity);
+    }
+
+    // Upraised Value
+    $i: $i + 1;
+    $deep: $deep + 100;
+    $opacity: $opacity + 0.1;
+  }
+}
+
+// variable color to
+@mixin colorVariable($name, $hex, $loop: 0) {
+  //Dark and light will be the amount of loop;
+
+  // Convert hex to hsl values
+  $h: floor(hue($hex));
+  $s: saturation($hex);
+  $l: lightness($hex);
+
+  // Return the round Values
+  $h: math.round(hue($hex));
+  $s: math.round(saturation($hex));
+  $l: math.round(lightness($hex));
+  $string-h: #{$h + ''};
+
+  // Remove deg from hsl values
+  $string-h: #{$h + ''}; //make it string
+  $h: str-slice($string-h, 1, -4); // remove last 3 digits
+  @if ($loop > 0) {
+    #{$name}-h: $h;
+    #{$name}-s: $s;
+    #{$name}-l: $l;
+    #{$name}: var(#{$name}-h) var(#{$name}-s) var(#{$name}-l);
+    @include loopColors(#{$name}, 'dark', $loop); //call loop function for looping Dark colors;
+    @include loopColors(#{$name}, 'light', $loop); //call loop function for looping light colors;
+  } @else {
+    #{$name}: $h #{$s} #{$l};
+  }
+}
+
+// Button style mixin for shorthand button styles;
+// NOTE: Button Name will be same as variable declaration name;
+@mixin btn-style($name, $color: --white) {
+  //solid button style
+  &#{$name} {
+    background-color: hsl(var(#{$name})) !important;
+    &:hover,
+    &:focus &:focus-visible {
+      background-color: hsl(var(#{$name}-d-200)) !important;
+      border: 1px solid hsl(var(#{$name}-d-200)) !important;
+    }
+  }
+  // Outline button styles
+  &-outline#{$name} {
+    background-color: transparent !important;
+    border: 1px solid hsl(var(#{$name})) !important;
+    color: hsl(var(#{$name})) !important;
+    &:hover,
+    &:focus &:focus-visible {
+      background-color: hsl(var(#{$name})) !important;
+      color: hsl(var(#{$color})) !important;
+    }
+  }
+}
+
+// Gradient button style;
+@mixin gradient-btn($name, $color1, $color2, $deg: 90deg) {
+  &#{$name} {
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      background: linear-gradient($deg, hsl(var($color2)) 0%, hsl(var($color1)) 100%);
+      border-radius: inherit !important;
+      z-index: -1;
+      transition: 0.2s linear;
+    }
+    &::after {
+      background: linear-gradient($deg, hsl(var($color1)) 0%, hsl(var($color2)) 100%);
+      visibility: hidden;
+      opacity: 0;
+    }
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      &::after {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+  // Outline button styles
+  &-outline#{$name} {
+    background-color: transparent !important;
+    border: 1px solid hsl(var(--base)) !important;
+    color: hsl(var(--base)) !important;
+    position: relative;
+    transition: 0.2s linear;
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      background: linear-gradient($deg, hsl(var($color2)) 0%, hsl(var($color1)) 100%);
+      border-radius: inherit !important;
+      z-index: -1;
+      transition: 0.2s linear;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      color: hsl(var(--white)) !important;
+      &::before,
+      &::after {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}

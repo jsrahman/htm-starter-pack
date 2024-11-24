@@ -1,0 +1,76 @@
+/* =========================== Accordion Css start ============================= */
+.custom--accordion {
+  .accordion-item {
+    border: 1px solid hsl(var(--black) / 0.09);
+    background-color: transparent !important;
+    border-radius: 5px;
+    overflow: hidden;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  .accordion-header {
+    line-height: 1;
+  }
+  .accordion-body {
+    padding: 20px;
+    background-color: hsl(var(--section-bg));
+    .text {
+      max-width: 60%;
+      @include msm-screen {
+        max-width: 100%;
+      }
+    }
+  }
+  &:first-of-type .accordion-button.collapsed {
+    border-radius: 5px;
+  }
+  &:last-of-type .accordion-button.collapsed {
+    border-radius: 5px;
+  }
+  .accordion-button {
+    background-color: hsl(var(--section-bg));
+    color: var(--heading-color);
+    @include fs-18;
+    padding: 15px;
+    @include msm-screen {
+      padding: 13px;
+      padding-right: 30px;
+    }
+    &::after {
+      background-image: none;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+    &:not(.collapsed) {
+      color: hsl(var(--white));
+      background-color: hsl(var(--black)) !important;
+      box-shadow: none;
+      &::after {
+        background-image: none;
+        color: hsl(var(--base));
+      }
+    }
+    &[aria-expanded='true'],
+    &[aria-expanded='false'] {
+      &::after {
+        font-family: 'Line Awesome Free';
+        font-weight: 900;
+        content: '\f068';
+        display: inline-block;
+        position: absolute;
+        @extend .top-center-extend;
+        right: 15px;
+        height: unset;
+      }
+    }
+    &[aria-expanded='false'] {
+      &::after {
+        content: '\f067';
+        color: hsl(var(--body-color));
+      }
+    }
+  }
+}
+/* ================================= Accordion Css End =========================== */

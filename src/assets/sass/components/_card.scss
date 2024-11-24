@@ -1,0 +1,28 @@
+
+/* ================================= Card Css Start =========================== */
+.custom--card {
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    background-color: hsl(var(--white));;
+    border: transparent;
+    .card-header {
+        padding: 12px 24px;
+        background-color: transparent;
+        border-bottom: 1px solid hsl(var(--black)/.1);
+        .title {
+            margin-bottom: 0;
+        }
+    }
+    .card-body {
+        background-color: hsl(var(--white));
+        padding: 24px;
+        border-radius: 5px;
+    }
+    .card-footer {
+        padding: 12px 24px;
+        background-color: transparent;
+        border-top: 1px solid hsl(var(--black)/.1);
+    }
+}
+/* ================================= Card Css End =========================== */
+
