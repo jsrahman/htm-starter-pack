@@ -74,7 +74,8 @@
         content: '\f068';
         display: inline-block;
         position: absolute;
-        @extend .top-center-extend;
+        top: 50%;
+          transform: translateY(-50%);
         right: 15px;
         height: unset;
       }

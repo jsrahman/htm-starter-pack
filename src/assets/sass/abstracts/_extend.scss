@@ -33,30 +33,6 @@
 
 /* ============================= Display Flex Css End ============================= */
 
-/* ============================= Positioning Css Class Start ===================== */
-.pa-extend {
-  position: absolute;
-  content: '';
-}
-
-.top-center-extend {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.left-center-extend {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.top-left-center-extend {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* ============================= Positioning Css Class End ===================== */
-
 /* ===================== Font Size For responsive devices Start =================== */
 .fs-10 {
   @include fs-10;

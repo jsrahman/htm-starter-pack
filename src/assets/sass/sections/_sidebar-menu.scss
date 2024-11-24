@@ -217,9 +217,11 @@
         padding-left: 25px;
 
         &::before {
-          @extend .pa-extend;
+          position: absolute;
+          content: '';
           left: 10px;
-          @extend .top-center-extend;
+          top: 50%;
+          transform: translateY(-50%);
           width: 10px;
           height: 10px;
           background-color: transparent;

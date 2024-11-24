@@ -1,0 +1,110 @@
+/* ======================  Select2 Start  ======================*/
+.select2-wrapper {
+  --border-radius: 8px;
+  --height: 50px;
+  --select2-border: hsl(var(--border-color));
+
+}
+
+.select2 {
+  +.select2-container {
+    border: 1px solid var(--select2-border);
+    border-radius: var(--border-radius);
+    width: 100% !important;
+    height: 50px;
+
+
+    .select2-selection__rendered {
+      line-height: var(--height);
+    }
+
+    .select2-selection--single {
+      height: var(--height);
+    }
+
+    .select2-selection {
+      border: 0;
+      background-color: transparent;
+      width: 100%;
+    }
+
+    .selection {
+      width: 100%;
+    }
+
+    .select2-selection__arrow {
+      top: 50%;
+      right: 5px;
+      transform: translateY(-50%);
+      background-color: #F8F8F8;
+      border-radius: inherit;
+      height: calc(var(--height) - 10px);
+      width: calc(var(--height) - 10px);
+
+      &::after {
+        position: absolute;
+        content: "\f078";
+        inset: 0;
+        font-weight: 900;
+        font-family: "Font Awesome 6 Free";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+      }
+
+      b {
+        border: 0;
+      }
+
+
+
+
+    }
+  }
+
+
+
+}
+
+
+.select2-container--open:has(.select2-dropdown--above) {
+  margin-top: -12px;
+}
+
+.select2-container--open:has(.select2-dropdown--below) {
+  margin-top: 10px;
+}
+
+.select2-container--open .select2-dropdown {
+  border: 1px solid var(--select2-border) !important;
+  border-radius: var(--border-radius) !important;
+  overflow: hidden;
+}
+
+.select2-container--open .select2-dropdown--above {
+  margin-bottom: 10px;
+}
+
+.select2-search__field {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--select2-border) !important;
+
+
+  &:focus {
+    outline: 0;
+    border-color: hsl(var(--base)) !important;
+  }
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: hsl(var(--base));
+}
+
+.select2-container--below.select2-container--open {
+  .select2-selection__arrow::after {
+    transform: rotate(180deg);
+  }
+}
+
+/* ======================  Select2 End  ======================*/

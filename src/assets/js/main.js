@@ -13,32 +13,24 @@
             $(this).removeClass('show');
         });
         // =============== Header Hide Click On Body Js End =========
-        // // ========================= Header Sticky Js Start ==============
-        $(window).on('scroll', function () {
-            if ($(window).scrollTop() >= 300) {
-                $('.header').addClass('fixed-header');
-            } else {
-                $('.header').removeClass('fixed-header');
-            }
-        });
-        // // ========================= Header Sticky Js End===================
 
-        // //============================ Scroll To Top Icon Js Start =========
-        var btn = $('.scroll-top');
+        //============================ Scroll To Top Icon Js Start =========
+        (function () {
+            const btn = $('.scroll-top');
+            $(window).on('scroll', function () {
+                if ($(window).scrollTop() >= 300) {
+                    $('.header').addClass('fixed-header');
+                } else {
+                    $('.header').removeClass('fixed-header');
+                }
+            });
 
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > 300) {
-                btn.addClass('show');
-            } else {
-                btn.removeClass('show');
-            }
-        });
+            btn.on('click', function (e) {
+                e.preventDefault();
+                $('html, body').animate({ scrollTop: 0 }, '300');
+            });
 
-        btn.on('click', function (e) {
-            e.preventDefault();
-            $('html, body').animate({ scrollTop: 0 }, '300');
-        });
-
+        })()
         // ========================== Header Hide Scroll Bar Js Start =====================
         $('.navbar-toggler.header-button').on('click', function () {
             $('body').toggleClass('scroll-hide-sm');
@@ -55,14 +47,15 @@
         // ========================== Small Device Header Menu On Click Dropdown menu collapse Stop Js End =====================
 
         // ========================== Add Attribute For Bg Image Js Start =====================
-        $('.bg-img').css('background', function () {
-            var bg = 'url(' + $(this).data('background-image') + ')';
-            return bg;
+        $('.bg-img').css('background-image', function () {
+            return `url(${$(this).data('background-image')})`;
         });
         // ========================== Add Attribute For Bg Image Js End =====================
 
         // ========================== add active class to ul>li top Active current page Js Start =====================
         function dynamicActiveMenuClass(selector) {
+            if (!($(selector).length)) return;
+
             let fileName = window.location.pathname.split('/').reverse()[0];
             selector.find('li').each(function () {
                 let anchor = $(this).find('a');
@@ -81,9 +74,8 @@
                 selector.find('li').eq(0).addClass('active');
             }
         }
-        if ($('ul.sidebar-menu-list').length) {
-            dynamicActiveMenuClass($('ul.sidebar-menu-list'));
-        }
+        dynamicActiveMenuClass($('ul.sidebar-menu-list'));
+
         // ========================== add active class to ul>li top Active current page Js End =====================
 
         // ================== Password Show Hide Js Start ==========
@@ -97,88 +89,6 @@
             }
         });
         // =============== Password Show Hide Js End =================
-
-        // ========================= Slick Slider Js Start ==============
-        $('.testimonial-slider').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: false,
-            autoplaySpeed: 2000,
-            speed: 1500,
-            dots: true,
-            pauseOnHover: true,
-            arrows: false,
-            prevArrow:
-                '<button type="button" class="slick-prev"><i class="fas fa-long-arrow-alt-left"></i></button>',
-            nextArrow:
-                '<button type="button" class="slick-next"><i class="fas fa-long-arrow-alt-right"></i></button>',
-            responsive: [
-                {
-                    breakpoint: 1199,
-                    settings: {
-                        arrows: false,
-                        slidesToShow: 2,
-                        dots: true,
-                    },
-                },
-                {
-                    breakpoint: 991,
-                    settings: {
-                        arrows: false,
-                        slidesToShow: 2,
-                    },
-                },
-                {
-                    breakpoint: 464,
-                    settings: {
-                        arrows: false,
-                        slidesToShow: 1,
-                    },
-                },
-            ],
-        });
-        // ========================= Slick Slider Js End ===================
-
-        // ========================= Client Slider Js Start ===============
-        // $('.client-slider').slick({
-        // slidesToShow: 6,
-        // slidesToScroll: 1,
-        // autoplay: true,
-        // autoplaySpeed: 1000,
-        // pauseOnHover: true,
-        // speed: 2000 ,
-        // dots: false,
-        // arrows: false,
-        // prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-long-arrow-alt-left"></i></button>',
-        // nextArrow: '<button type="button" class="slick-next"><i class="fas fa-long-arrow-alt-right"></i></button>',
-        // responsive: [
-        //     {
-        //       breakpoint: 1199,
-        //       settings: {
-        //         slidesToShow:6,
-        //       }
-        //     },
-        //     {
-        //       breakpoint: 991,
-        //       settings: {
-        //         slidesToShow: 5
-        //       }
-        //     },
-        //     {
-        //       breakpoint: 767,
-        //       settings: {
-        //         slidesToShow: 4
-        //       }
-        //     },
-        //     {
-        //       breakpoint: 400,
-        //       settings: {
-        //         slidesToShow: 3
-        //       }
-        //     }
-        //   ]
-        // });
-        // ========================= Client Slider Js End ===================
 
         // ================== Sidebar Menu Js Start ===============
         // Sidebar Dropdown Menu Start
@@ -217,6 +127,65 @@
         });
         // ==================== Dashboard User Profile Dropdown End ==================
 
+        //Plugin Customization Start
+        // ========================= Select2 Js Start ==============
+        (function () {
+            $('.select2').each((index, select) => {
+                $(select).wrap('<div class="select2-wrapper"></div>').select2({
+                    dropdownParent: $(select).closest('.select2-wrapper')
+                });
+            });
+        })()
+            // ========================= Select2 Js End ==============
+
+            // ========================= Slick Slider Js Start ==============
+            (function () {
+                const sliderConfig = {
+                    slidesToScroll: 1,
+                    autoplay: false,
+                    autoplaySpeed: 2000,
+                    speed: 1500,
+                    dots: true,
+                    pauseOnHover: true,
+                    arrows: false,
+                    prevArrow:
+                        '<button type="button" class="slick-prev"><i class="fas fa-long-arrow-alt-left"></i></button>',
+                    nextArrow:
+                        '<button type="button" class="slick-next"><i class="fas fa-long-arrow-alt-right"></i></button>',
+                };
+
+                $('.testimonial-slider').slick({
+                    ...sliderConfig,
+                    slidesToShow: 3,
+                    responsive: [
+                        {
+                            breakpoint: 1199,
+                            settings: {
+                                arrows: false,
+                                slidesToShow: 2,
+                                dots: true,
+                            },
+                        },
+                        {
+                            breakpoint: 991,
+                            settings: {
+                                arrows: false,
+                                slidesToShow: 2,
+                            },
+                        },
+                        {
+                            breakpoint: 464,
+                            settings: {
+                                arrows: false,
+                                slidesToShow: 1,
+                            },
+                        },
+                    ],
+                });
+            })()
+        // ========================= Slick Slider Js End ===================
+
+
         // ========================= Odometer Counter Up Js End ==========
         $('.counterup-item').each(function () {
             $(this).isInViewport(function (status) {
@@ -232,8 +201,10 @@
                 }
             });
         });
+
         // ========================= Odometer Up Counter Js End =====================
     });
+
     // ==========================================
     //      End Document Ready function
     // ==========================================

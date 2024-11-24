@@ -64,7 +64,8 @@
     }
 
     &::before {
-      @extend .pa-extend;
+      position: absolute;
+        content: '';
       left: 0;
       bottom: -5px;
       width: 100%;

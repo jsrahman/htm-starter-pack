@@ -228,32 +228,6 @@
 }
 
 /* ============================= Display Flex Css End ============================= */
-/* ============================= Positioning Css Class Start ===================== */
-.pa-extend, .alert__link::before {
-    position: absolute;
-    content: "";
-}
-
-.top-center-extend, .custom--accordion .accordion-button[aria-expanded=true]::after, .custom--accordion .accordion-button[aria-expanded=false]::after {
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-.left-center-extend {
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-}
-
-.top-left-center-extend {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-
-/* ============================= Positioning Css Class End ===================== */
 /* ===================== Font Size For responsive devices Start =================== */
 .fs-10 {
     font-size: 0.625rem;
@@ -686,11 +660,9 @@ button:focus {
 
 /* Bg Image Css */
 .bg-img {
-    background-size: cover !important;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    width: 100%;
-    height: 100%;
 }
 
 /* Hide Scroll bar Css For Custom Modal */
@@ -733,7 +705,7 @@ button:focus {
     opacity: 0;
 }
 
-.body-overlay.show-overlay {
+.body-overlay.show {
     visibility: visible;
     opacity: 1;
 }
@@ -1236,6 +1208,9 @@ button:focus {
     content: "\f068";
     display: inline-block;
     position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
     right: 15px;
     height: unset;
 }
@@ -2601,6 +2576,8 @@ input[type=number] {
 }
 
 .alert__link::before {
+    position: absolute;
+    content: "";
     left: 0;
     bottom: -5px;
     width: 100%;
@@ -3639,6 +3616,364 @@ input[type=number] {
 }
 
 /* =========================== Banner Section End Here ========================= */
+/* ======================  Plugin Customization Start  ======================*/
+/* ======================  Select2 Start  ======================*/
+.select2-wrapper {
+    --border-radius: 8px;
+    --height: 50px;
+    --select2-border: hsl(var(--border-color));
+}
+
+.select2 + .select2-container {
+    border: 1px solid var(--select2-border);
+    border-radius: var(--border-radius);
+    width: 100% !important;
+    height: 50px;
+}
+
+.select2 + .select2-container .select2-selection__rendered {
+    line-height: var(--height);
+}
+
+.select2 + .select2-container .select2-selection--single {
+    height: var(--height);
+}
+
+.select2 + .select2-container .select2-selection {
+    border: 0;
+    background-color: transparent;
+    width: 100%;
+}
+
+.select2 + .select2-container .selection {
+    width: 100%;
+}
+
+.select2 + .select2-container .select2-selection__arrow {
+    top: 50%;
+    right: 5px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: #F8F8F8;
+    border-radius: inherit;
+    height: calc(var(--height) - 10px);
+    width: calc(var(--height) - 10px);
+}
+
+.select2 + .select2-container .select2-selection__arrow::after {
+    position: absolute;
+    content: "\f078";
+    inset: 0;
+    font-weight: 900;
+    font-family: "Font Awesome 6 Free";
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.select2 + .select2-container .select2-selection__arrow b {
+    border: 0;
+}
+
+.select2-container--open:has(.select2-dropdown--above) {
+    margin-top: -12px;
+}
+
+.select2-container--open:has(.select2-dropdown--below) {
+    margin-top: 10px;
+}
+
+.select2-container--open .select2-dropdown {
+    border: 1px solid var(--select2-border) !important;
+    border-radius: var(--border-radius) !important;
+    overflow: hidden;
+}
+
+.select2-container--open .select2-dropdown--above {
+    margin-bottom: 10px;
+}
+
+.select2-search__field {
+    border-radius: var(--border-radius);
+    border: 1px solid var(--select2-border) !important;
+}
+
+.select2-search__field:focus {
+    outline: 0;
+    border-color: hsl(var(--base)) !important;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: hsl(var(--base));
+}
+
+.select2-container--below.select2-container--open .select2-selection__arrow::after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+/* ======================  Select2 End  ======================*/
+/* ================= Slick Arrow & Dots css Start ================ */
+.slick-initialized.slick-slider {
+    margin: 0 -10px;
+}
+
+.slick-initialized.slick-slider .slick-track {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.slick-initialized.slick-slider .slick-slide {
+    height: auto;
+    padding: 0 10px;
+}
+
+.slick-initialized.slick-slider .slick-slide > div {
+    height: 100%;
+}
+
+.slick-arrow {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border: none;
+    color: hsl(var(--white));
+    width: 60px;
+    height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 50%;
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+    background-color: hsl(var(--base));
+    color: hsl(var(--white));
+    font-size: 20px;
+}
+
+@media screen and (max-width: 991px) {
+    .slick-arrow {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .slick-arrow {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+.slick-arrow:hover {
+    border-color: hsl(var(--base));
+    background-color: hsl(var(--base-two));
+}
+
+.slick-next {
+    right: -20px;
+}
+
+@media screen and (max-width: 991px) {
+    .slick-next {
+        right: -10px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .slick-next {
+        right: 10px;
+    }
+}
+
+.slick-prev {
+    left: -20px;
+}
+
+@media screen and (max-width: 991px) {
+    .slick-prev {
+        left: -10px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .slick-prev {
+        left: 10px;
+    }
+}
+/* -------------- Slick Slider Arrow Style two ------------  */
+.slick-arrow {
+    position: absolute;
+    z-index: 1;
+    border: none;
+    background-color: transparent;
+    color: hsl(var(--white));
+    width: 32px;
+    height: 34px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 5px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    background-color: hsl(var(--black));
+    color: hsl(var(--white));
+    top: -67px;
+}
+
+@media screen and (max-width: 1199px) {
+    .slick-arrow {
+        top: -69px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .slick-arrow {
+        top: auto;
+        bottom: -50px;
+        right: 50%;
+    }
+}
+
+.slick-arrow:hover {
+    background-color: hsl(var(--black));
+    color: hsl(var(--white));
+}
+
+.slick-next {
+    right: 10px;
+    background-color: hsl(var(--base));
+}
+
+@media screen and (max-width: 767px) {
+    .slick-next {
+        top: auto;
+        right: calc(50% - 37px);
+    }
+}
+
+.slick-prev {
+    right: 52px;
+}
+
+@media screen and (max-width: 767px) {
+    .slick-prev {
+        top: auto;
+        right: calc(50% + 5px);
+    }
+}
+/* Dots Css Start */
+.slick-dots {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.slick-dots li {
+    display: inline-block;
+}
+
+.slick-dots li button {
+    border: none;
+    background-color: hsl(var(--black));
+    color: hsl(var(--white));
+    margin: 0 3px;
+    width: 8px;
+    height: 8px;
+    border-radius: 1px;
+    border-radius: 50%;
+    text-indent: -9999px;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+}
+
+.slick-dots li.slick-active button {
+    background-color: hsl(var(--base));
+    width: 25px;
+    border-radius: 5px;
+    color: hsl(var(--base));
+}
+
+/* Dots Css End */
+/* ================= Slick Arrow & Dots css Start ================ */
+/* ================================= Range Slider Css Start =========================== */
+.custom--range__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.custom--range__content label {
+    width: 40%;
+}
+
+.custom--range__content input {
+    width: 60%;
+    text-align: right;
+}
+
+.custom--range input {
+    border: 0;
+    color: hsl(var(--body-color));
+    font-weight: 500;
+}
+
+.custom--range #slider-range {
+    height: 5px;
+    border: 0;
+    background: hsl(var(--base)/0.2);
+}
+
+.custom--range #slider-range .ui-widget-header {
+    background-color: hsl(var(--base));
+}
+
+.custom--range #slider-range span:focus {
+    background-color: hsl(var(--base));
+}
+
+.custom--range #slider-range .ui-slider-handle {
+    width: 15px !important;
+    height: 15px !important;
+    background-color: hsl(var(--base)) !important;
+    border: 2px solid hsl(var(--white)) !important;
+    border-radius: 50%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/* ================================= Range Slider Css End =========================== */
+/* ======================  Plugin Customization End  ======================*/
 /* ======================  Pages Design Start  ======================*/
 /* ======================  Pages Design End  ======================*/
 /*# sourceMappingURL=main.css.map */
