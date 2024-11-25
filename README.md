@@ -4,7 +4,7 @@
 
  
 <!-- BEGIN LATEST DOWNLOAD BUTTON -->
-[![epub Download zip](https://custom-icon-badges.demolab.com/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white "Download zip")](https://github.com/jsrahman/htm-starter-pack/archive/refs/tags/V-2.2.0.zip)
+[![epub Download zip](https://custom-icon-badges.demolab.com/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white "Download zip")](https://github.com/jsrahman/htm-starter-pack/archive/refs/tags/V-2.2.1.zip)
 <!-- END LATEST DOWNLOAD BUTTON -->
 
 ## How to install? 
