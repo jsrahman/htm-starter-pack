@@ -62,7 +62,57 @@
   background-color: hsl(var(--danger) / 0.08);
 }
 
-/* Table Content Css end */
+@mixin table-responsive {
+  thead {
+    display: none;
+  }
+
+  tbody {
+    tr {
+      display: block;
+
+      &:last-child td {
+        border-bottom: 0;
+      }
+
+      td {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        text-align: right;
+        padding: 10px 15px;
+        border: none;
+        border-bottom: 1px solid hsl(var(--black) / 0.8);
+        max-width: unset;
+
+        &:last-child {
+          border: none;
+        }
+
+        &:first-child {
+          text-align: right;
+          border-left: 0;
+        }
+
+        &::before {
+          display: block;
+          @include fs-14;
+          color: hsl(var(--black) / 0.7);
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        border: 0;
+      }
+    }
+  }
+
+}
 
 /* Table Css Start */
 .table {
@@ -174,225 +224,25 @@
 
 .table--responsive--md {
   @include sm-screen {
-    thead {
-      display: none;
-    }
-
-    tbody {
-      tr {
-        display: block;
-
-        &:last-child td {
-          border-bottom: 0;
-        }
-
-        td {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 15px;
-          text-align: right;
-          padding: 10px 15px;
-          border: none;
-          border-bottom: 1px solid hsl(var(--black) / 0.8);
-          max-width: unset;
-
-          &:last-child {
-            border: none;
-          }
-
-          &:first-child {
-            text-align: right;
-            border-left: 0;
-          }
-
-          &::before {
-            display: block;
-            @include fs-14;
-            color: hsl(var(--black) / 0.7);
-          }
-        }
-      }
-    }
-  }
-
-  @include sm-screen {
-    tbody {
-      tr {
-        td {
-          border: 0;
-        }
-      }
-    }
+    @include table-responsive();
   }
 }
 
 .table--responsive--lg {
   @include md-screen {
-    thead {
-      display: none;
-    }
-
-    tbody {
-      tr {
-        display: block;
-
-        &:nth-child(even) {
-          background-color: hsl(var(--black) / 0.02);
-        }
-
-        &:last-child td {
-          border-bottom: 0;
-        }
-
-        td {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 15px;
-          text-align: right;
-          padding: 10px 15px;
-          border: none;
-          border-bottom: 1px solid hsl(var(--black) / 0.08);
-          max-width: unset;
-
-          &:last-child {
-            border: none;
-          }
-
-          &:first-child {
-            text-align: right;
-            border-left: 0;
-          }
-
-          &::before {
-            display: block;
-            @include fs-14;
-            color: hsl(var(--black) / 0.7);
-          }
-        }
-      }
-    }
-  }
-
-  @include md-screen {
-    tbody {
-      tr {
-        td {
-          border: none;
-        }
-      }
-    }
+    @include table-responsive();
   }
 }
 
 .table--responsive--xl {
   @include lg-screen {
-    thead {
-      display: none;
-    }
-
-    tbody {
-      tr {
-        display: block;
-
-        &:nth-child(even) {
-          background-color: hsl(var(--black) / 0.02);
-        }
-
-        td {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 15px;
-          text-align: right;
-          padding: 10px 15px;
-          border: none;
-          border-bottom: 1px solid hsl(var(--black) / 0.08);
-          max-width: unset;
-
-          &:last-child {
-            border: none;
-          }
-
-          &:first-child {
-            text-align: right;
-            border-left: 0;
-          }
-
-          &::before {
-            display: block;
-            @include fs-14;
-            color: hsl(var(--black) / 0.7);
-          }
-        }
-      }
-    }
-  }
-
-  @include lg-screen {
-    tbody {
-      tr {
-        td {
-          border: 0;
-        }
-      }
-    }
+    @include table-responsive();
   }
 }
 
 .table--responsive--xxl {
   @include xl-screen {
-    thead {
-      display: none;
-    }
-
-    tbody {
-      tr {
-        display: block;
-
-        &:last-child td {
-          border-bottom: 0;
-        }
-
-        td {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 15px;
-          text-align: right;
-          padding: 10px 15px;
-          border: none;
-          border-bottom: 1px solid hsl(var(--black) / 0.08);
-          max-width: unset;
-
-          &:last-child {
-            border: none;
-          }
-
-          &:first-child {
-            text-align: right;
-            border-left: 0;
-          }
-
-          &::before {
-            display: block;
-            @include fs-14;
-            color: hsl(var(--black) / 0.7);
-          }
-        }
-      }
-    }
-  }
-
-  @include xl-screen {
-    tbody {
-      tr {
-        td {
-          border: 0;
-        }
-      }
-    }
+    @include table-responsive();
   }
 }
 

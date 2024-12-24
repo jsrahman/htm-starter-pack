@@ -1,39 +1,14 @@
 @use 'sass:math';
 
-// Space between child elements in using margin it's top to bottom;
-@mixin space-y($val) {
-    &> :not([hidden])~ :not([hidden]) {
-        margin-top: #{convertToRem($val)}rem;
-        margin-bottom: #{convertToRem($val)}rem;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-}
-
-// Space between child elements in using margin it's left to right;
-@mixin space-x($val) {
-    &> :not([hidden])~ :not([hidden]) {
-        margin-left: #{convertToRem($val)}rem;
-        margin-right: #{convertToRem($val)}rem;
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-}
-
 // Size function get value to hide and width make center the value;
-@mixin size($width, $height: $width) {
+@mixin size($width, $position: false) {
     width: $width;
     height: $height;
 
-    @if $width==$height {
+    @if $position=='center' {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
     }
 }
 
@@ -62,11 +37,6 @@
 // variable color to
 @mixin colorVariable($name, $hex, $loop: 0) {
     //Dark and light will be the amount of loop;
-
-    // Convert hex to hsl values
-    $h: floor(hue($hex));
-    $s: saturation($hex);
-    $l: lightness($hex);
 
     // Return the round Values
     $h: math.round(hue($hex));
@@ -203,4 +173,10 @@
     display: -webkit-box;
     -webkit-line-clamp: $lines;
     -webkit-box-orient: vertical;
+}
+
+@mixin get-icon($code, $font-family: 'Font Awesome 6 Free') {
+    content: '#{"/"}#{$code}';
+    font-family: $font-family;
+    font-weight: 900;
 }

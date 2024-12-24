@@ -4,15 +4,23 @@
     //      Start Document Ready function
     // ==========================================
     $(document).ready(function () {
-        // ============== Header Hide Click On Body Js Start ========
-        $('.header-button').on('click', function () {
-            $('.body-overlay').toggleClass('show');
+        // ==================== Header Navbar Collapse JS Start =====================
+        function hideNavbarCollapse() {
+            new bootstrap.Collapse($('.navbar-collapse')[0]).hide();
+            $('.navbar-collapse').trigger('hide.bs.collapse');
+        }
+
+        $('.navbar-collapse').on({
+            'show.bs.collapse': function () {
+                $('body').addClass('scroll-hide');
+                $('.body-overlay').addClass('show').on('click', hideNavbarCollapse);
+            },
+            'hide.bs.collapse': function () {
+                $('body').removeClass('scroll-hide');
+                $('.body-overlay').removeClass('show').unbind('click', hideNavbarCollapse);
+            },
         });
-        $('.body-overlay').on('click', function () {
-            $('.header-button').trigger('click');
-            $(this).removeClass('show');
-        });
-        // =============== Header Hide Click On Body Js End =========
+        // ==================== Header Navbar Collapse JS End ======================= 
 
         //============================ Scroll To Top Icon Js Start =========
         (function () {
@@ -30,15 +38,7 @@
                 $('html, body').animate({ scrollTop: 0 }, '300');
             });
 
-        })()
-        // ========================== Header Hide Scroll Bar Js Start =====================
-        $('.navbar-toggler.header-button').on('click', function () {
-            $('body').toggleClass('scroll-hide-sm');
-        });
-        $('.body-overlay').on('click', function () {
-            $('body').removeClass('scroll-hide-sm');
-        });
-        // ========================== Header Hide Scroll Bar Js End =====================
+        })();
 
         // ========================== Small Device Header Menu On Click Dropdown menu collapse Stop Js Start =====================
         $('.dropdown-item').on('click', function () {
@@ -135,54 +135,55 @@
                     dropdownParent: $(select).closest('.select2-wrapper')
                 });
             });
-        })()
-            // ========================= Select2 Js End ==============
+        })();
+        // ========================= Select2 Js End ==============
 
-            // ========================= Slick Slider Js Start ==============
-            (function () {
-                const sliderConfig = {
-                    slidesToScroll: 1,
-                    autoplay: false,
-                    autoplaySpeed: 2000,
-                    speed: 1500,
-                    dots: true,
-                    pauseOnHover: true,
-                    arrows: false,
-                    prevArrow:
-                        '<button type="button" class="slick-prev"><i class="fas fa-long-arrow-alt-left"></i></button>',
-                    nextArrow:
-                        '<button type="button" class="slick-next"><i class="fas fa-long-arrow-alt-right"></i></button>',
-                };
+        // ========================= Slick Slider Js Start ==============
+        (function () {
+            const sliderConfig = {
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                speed: 1500,
+                dots: true,
+                pauseOnHover: true,
+                arrows: false,
+                prevArrow:
+                    '<button type="button" class="slick-prev"><i class="fas fa-long-arrow-alt-left"></i></button>',
+                nextArrow:
+                    '<button type="button" class="slick-next"><i class="fas fa-long-arrow-alt-right"></i></button>',
+            };
 
-                $('.testimonial-slider').slick({
-                    ...sliderConfig,
-                    slidesToShow: 3,
-                    responsive: [
-                        {
-                            breakpoint: 1199,
-                            settings: {
-                                arrows: false,
-                                slidesToShow: 2,
-                                dots: true,
-                            },
+            $('.testimonial-slider').slick({
+                ...sliderConfig,
+                slidesToShow: 3,
+                responsive: [
+                    {
+                        breakpoint: 1199,
+                        settings: {
+                            arrows: false,
+                            slidesToShow: 2,
+                            dots: true,
                         },
-                        {
-                            breakpoint: 991,
-                            settings: {
-                                arrows: false,
-                                slidesToShow: 2,
-                            },
+                    },
+                    {
+                        breakpoint: 991,
+                        settings: {
+                            arrows: false,
+                            slidesToShow: 2,
                         },
-                        {
-                            breakpoint: 464,
-                            settings: {
-                                arrows: false,
-                                slidesToShow: 1,
-                            },
+                    },
+                    {
+                        breakpoint: 464,
+                        settings: {
+                            arrows: false,
+                            slidesToShow: 1,
                         },
-                    ],
-                });
-            })()
+                    },
+                ],
+            });
+        })();
+
         // ========================= Slick Slider Js End ===================
 
 
@@ -204,15 +205,12 @@
 
         // ========================= Odometer Up Counter Js End =====================
     });
-
     // ==========================================
     //      End Document Ready function
     // ==========================================
 
     // ========================= Preloader Js Start =====================
-    $(window).on('load', function () {
-        $('.preloader').fadeOut();
-    });
+    $(window).on('load', () => $('.preloader').fadeOut());
     // ========================= Preloader Js End=====================
 })(jQuery);
 
