@@ -24,6 +24,30 @@
     "body": ["font-size: rem(${1});"],
     "description": "font-size on rem"
   },
+  "clamp Call": {
+    "prefix": "@clamp",
+    "scope": "scss",
+    "body": ["@include clamp(${1});"],
+    "description": "clamp call"
+  },
+  "before-after": {
+    "prefix": "@before",
+    "scope": "scss",
+    "body": [
+      "position: relative;",
+      "&::before{",
+      " content: '';",
+      " position: ${1:absolute};",
+      " top: ${2:0};",
+      " left: ${3:0};",
+      " width: ${4:100%};",
+      " height: ${5:100%};",
+      " background-color: hsl(var(--${6|base,black,white|}));",
+      "${0}",
+      "}",
+    ],
+    "description": "before-after call"
+  },
 
   "Scss Page Start": {
     "prefix": "start",

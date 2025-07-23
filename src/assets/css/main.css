@@ -310,6 +310,7 @@
         font-size: 1.0625rem;
     }
 }
+
 /* ===================== Font Size For responsive devices End =================== */
 /* ================================= Common Typography Css Start =========================== */
 * {
@@ -649,6 +650,7 @@ button:focus {
         width: 50%;
     }
 }
+
 /* Section Background */
 .section-bg {
     background-color: hsl(var(--section-bg));
@@ -748,6 +750,7 @@ button:focus {
         opacity: 1;
     }
 }
+
 /* Overlay End */
 /* ================================= Custom Classes Css End =========================== */
 /* ====================== Section Heading ==================== */
@@ -1095,6 +1098,7 @@ button:focus {
         margin-bottom: 30px;
     }
 }
+
 /* ================================= Border Color Css Start =========================== */
 .border--base {
     border-color: hsl(var(--base)) !important;
@@ -1756,6 +1760,7 @@ input[type=number] {
         font-size: 0.9375rem;
     }
 }
+
 /* Custom Radio Design */
 .form--radio .form-check-input {
     -webkit-box-shadow: none;
@@ -2437,6 +2442,7 @@ input[type=number] {
         border: 0;
     }
 }
+
 /* ================================= Table Css End =========================== */
 /* ================================= Badge Css Start =========================== */
 .custom--badge {
@@ -3178,6 +3184,7 @@ input[type=number] {
         color: hsl(var(--base));
     }
 }
+
 /* Language Box */
 .language-box {
     display: -webkit-box;
@@ -3259,6 +3266,7 @@ input[type=number] {
         margin-top: 15px;
     }
 }
+
 /* Footer List Item */
 .footer-menu {
     display: -webkit-box;
@@ -3415,6 +3423,7 @@ input[type=number] {
         font-size: 0.875rem;
     }
 }
+
 /* ================================= Social Icon Css End ===========================  */
 /* ====================== Breadcrumb Css Start ==================== */
 .breadcrumb {
@@ -3556,106 +3565,170 @@ input[type=number] {
 /* =========================== Banner Section End Here ========================= */
 /* ======================  Plugin Customization Start  ======================*/
 /* ======================  Select2 Start  ======================*/
-.select2-wrapper {
+.custom--select2 {
+    --s-height: 50px;
+    --select-border: var(--border-color);
+    --select-bg: var(--white);
+    --select-shadow: 0px 1px 2px 0px hsl(var(--heading-color) / .06);
     --border-radius: 8px;
-    --height: 50px;
-    --select2-border: hsl(var(--border-color));
+    --font-size: 0.875rem;
 }
 
-.select2 + .select2-container {
-    border: 1px solid var(--select2-border);
-    border-radius: var(--border-radius);
-    width: 100% !important;
-    height: 50px;
+.custom--select2:has(.select2.style-two) {
+    --select-shadow: 2px 2px 2px 0px hsl(var(--border-color) / .6) inset;
+    --s-height: 30px;
+    --border-radius: 4px;
 }
 
-.select2 + .select2-container .select2-selection__rendered {
-    line-height: var(--height);
+.custom--select2 .select2-group {
+    position: relative;
 }
 
-.select2 + .select2-container .select2-selection--single {
-    height: var(--height);
-}
-
-.select2 + .select2-container .select2-selection {
-    border: 0;
-    background-color: transparent;
-    width: 100%;
-}
-
-.select2 + .select2-container .selection {
-    width: 100%;
-}
-
-.select2 + .select2-container .select2-selection__arrow {
+.custom--select2 .select2-group .icon {
+    position: absolute;
+    left: 12px;
     top: 50%;
-    right: 5px;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    background-color: #F8F8F8;
-    border-radius: inherit;
-    height: calc(var(--height) - 10px);
-    width: calc(var(--height) - 10px);
+    z-index: 2;
 }
 
-.select2 + .select2-container .select2-selection__arrow::after {
-    position: absolute;
-    content: "\f078";
-    inset: 0;
-    font-weight: 900;
-    font-family: "Font Awesome 6 Free";
+.custom--select2 .select2-group .select2-container--default :is(.select2-selection--multiple, .select2-selection--single) {
+    padding-left: 36px;
+}
+
+.custom--select2 .selection {
+    display: block;
+}
+
+.custom--select2 .select2 .dropdown-wrapper {
+    display: none;
+}
+
+.custom--select2 .select2-container--default :is(.select2-selection--multiple, .select2-selection--single) {
+    border: 1px solid hsl(var(--border-color));
+    background: hsl(var(--white));
+    border-radius: var(--border-radius);
+    min-height: var(--s-height);
+    padding-inline: 4px;
+    -webkit-box-shadow: var(--select-shadow);
+    box-shadow: var(--select-shadow);
+}
+
+.custom--select2 .select2-container--default.select2-container--focus :is(.select2-selection--multiple, .select2-selection--single),
+.custom--select2 .select2-container--default.select2-container--open :is(.select2-selection--multiple, .select2-selection--single) {
+    border-color: hsl(var(--base));
+}
+
+.custom--select2 .select2-container--default .select2-results__option--selected {
+    background-color: hsl(var(--black)/0.05);
+}
+
+.custom--select2 .select2-dropdown {
+    border: 1px solid hsl(var(--black)/0.2) !important;
+    min-width: 140px;
+    border-radius: var(--border-radius) !important;
+    margin-top: 4px !important;
+}
+
+.custom--select2 .select2-container--default .select2-results__option--selected {
+    background-color: hsl(var(--section-bg)) !important;
+    color: hsl(var(--heading-color)) !important;
+}
+
+.custom--select2 .select2-container--default .select2-results__option--highlighted {
+    background-color: hsl(var(--section-bg)/0.5) !important;
+    color: hsl(var(--heading-color)) !important;
+}
+
+.custom--select2 .select2-results__option {
+    padding: 6px 10px;
+    color: hsl(var(--black));
+    font-size: var(--font-size);
+}
+
+.custom--select2 .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: hsl(var(--gray-color)/0.1);
+    border: 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: hsl(var(--black));
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    gap: 6px;
+}
+
+.custom--select2 .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: var(--s-height);
+}
+
+.custom--select2 .select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: var(--s-height);
+    font-size: var(--font-size);
+    color: hsl(var(--heading-color));
+}
+
+.custom--select2 .select2-container--default .select2-selection--multiple .select2-selection__choice__display {
+    padding-left: 6px;
+    padding-right: 0;
+}
+
+.custom--select2 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    border: 0;
+}
+
+.custom--select2 .select2-search--dropdown {
+    display: block;
+    padding: 8px;
+}
+
+.custom--select2 .select2-container--default .select2-search--dropdown .select2-search__field {
+    border: 1px solid hsl(var(--select-border));
+    outline: 0;
+    border-radius: var(--border-radius);
+    padding: 6px 16px;
+    font-size: var(--font-size);
+    color: hsl(var(--black));
+}
+
+.custom--select2 .select2-container:has(.select2-selection--multiple, .select2-selection--single) {
+    width: 100% !important;
+}
+
+.custom--select2 .img-flag-inner {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s;
+    gap: 6px;
 }
 
-.select2 + .select2-container .select2-selection__arrow b {
-    border: 0;
+.custom--select2 .img-flag {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
-.select2-container--open:has(.select2-dropdown--above) {
-    margin-top: -12px;
+.custom--select2 .select2-results__options::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
 }
 
-.select2-container--open:has(.select2-dropdown--below) {
-    margin-top: 10px;
+.custom--select2 .select2-results__options::-webkit-scrollbar-track {
+    background-color: hsl(var(--select-border));
 }
 
-.select2-container--open .select2-dropdown {
-    border: 1px solid var(--select2-border) !important;
-    border-radius: var(--border-radius) !important;
-    overflow: hidden;
-}
-
-.select2-container--open .select2-dropdown--above {
-    margin-bottom: 10px;
-}
-
-.select2-search__field {
-    border-radius: var(--border-radius);
-    border: 1px solid var(--select2-border) !important;
-}
-
-.select2-search__field:focus {
-    outline: 0;
-    border-color: hsl(var(--base)) !important;
-}
-
-.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-    background-color: hsl(var(--base));
-}
-
-.select2-container--below.select2-container--open .select2-selection__arrow::after {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
+.custom--select2 .select2-results__options::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--black)/0.2);
 }
 
 /* ======================  Select2 End  ======================*/
@@ -3757,6 +3830,7 @@ input[type=number] {
         left: 10px;
     }
 }
+
 /* -------------- Slick Slider Arrow Style two ------------  */
 .slick-arrow {
     position: absolute;
@@ -3824,6 +3898,7 @@ input[type=number] {
         right: calc(50% + 5px);
     }
 }
+
 /* Dots Css Start */
 .slick-dots {
     text-align: center;
