@@ -25,6 +25,12 @@
     "body": ["@include size(${1})"],
     "description": "If Size are equal it will be display grid place item Center"
   },
+  "Line Clamp": {
+    "prefix": "@line-clamp",
+    "scope": "scss",
+    "body": ["@include line-clamp(${1})"],
+    "description": "Line Clamp"
+  },
   "CSS calculation": {
     "prefix": "calc()",
     "scope": "scss",
