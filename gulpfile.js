@@ -83,7 +83,7 @@ function watch() {
         browserSync.reload();
         done();
     }));
-    gulp.watch('./src/assets/js/custom-lib/*.js', gulp.series(scripts, (done) => {
+    gulp.watch('./src/assets/js/**/*.js', gulp.series(scripts, (done) => {
         browserSync.reload();
         done();
     }));
