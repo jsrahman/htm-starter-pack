@@ -22,8 +22,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Import addFile task if needed
-const addFile = await import('./add-file.js');
-addFile.default(gulp);
+import addFile from './add-file.js';
+addFile(gulp);
 
 function style() {
     return gulp
