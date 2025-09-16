@@ -43,9 +43,12 @@
 
 ## change log (2.1.0)
 1. cli make a section section `gulp add:s`
-2. auto remove images src path `../../`
-3. New file to stracture like init
-4. Updated css with without loading.
+3. auto remove images src path `../../`
+4. New file to stracture like init
+5. Updated css with without loading.
+
+
+> please check, if no gulp-cli please install `npm i -g gulp-cli`
 
 
 
